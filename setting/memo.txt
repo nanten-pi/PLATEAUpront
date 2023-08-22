@@ -31,3 +31,5 @@ https://www.automation-technology.info/index.php/2021/07/26/post-381/
 これは起動時に実行したら楽そう
 
 バックエンド使えそうなやつら(API)
+http通信でのサーバーとのやり取りの簡易的なもの
+https://qiita.com/Atakasu697/items/a160313b156e91a5fdd2
