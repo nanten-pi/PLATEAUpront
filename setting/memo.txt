@@ -1,0 +1,33 @@
+Flutterでアプリを書く？
+ios android双方に向けて作る？ PC向けにもBuildする予定
+仕組みとしては
+スマホ等から定期的に1パケット分に現在接続している接続先のSSID(基本はLTEのキャリアかな？)と電波強度を送信させる＋GPS情報も
+サーバー側でそれらのデータを分析し、PLATEAUのモデルデータと結合させて表示用のパケットを作る（ここでも安定性よりもネットワークに負荷をかけないことを優先）
+アプリに戻す
+留意点としては、とにかくパケット数を減らし、通信容量を削減し、またアプリで重たい処理を行わせてバッテリーを減らさないようにすることの二点を心がける　またデータは基本的にかなりセンシティブなものなのでセキリュティをきちんと確保する
+暗号化はRSAで文字列を簡単な暗号化にかけるだけにする（HTTPSなどは用いない？）
+
+フロントエンド使えそうな記事
+https://itnext.io/network-connectivity-in-flutter-15e16c2598f
+https://pub.dev/packages/internet_speed_test
+https://stackoverflow.com/questions/71672373/how-to-show-network-internet-strength-in-flutter
+https://pub.dev/packages/wifi_hunter
+これも　それぞれインターネットの情報や速度を取得可能
+https://zenn.dev/namioto/articles/3abb0ccf8d8fb6
+https://qiita.com/kazutxt/items/1af63e9e32a780daba32
+https://note.jpn.pioneer/n/n25998ea6422f
+GPSのデータを取得可能
+高さデータの取得はむずそう
+https://zenn.dev/heyhey1028/books/flutter-basics/viewer/getting_started_windows
+windowsへの導入方法　むずそう
+https://zenn.dev/flutteruniv_dev/articles/20220403-075051-flutter-windows-app
+ちゃんとWindows向けにBuild可能
+https://qiita.com/kenichiro-yamato/items/12d7199cb2d7812ac0ce
+API向けのpost(httpで)は可能っぽい
+https://qiita.com/kenichiro-yamato/items/ce7d77e9c733c24024d8
+https://note.com/blue_69/n/nc7c0269947e0
+この辺も参考になりそう
+https://www.automation-technology.info/index.php/2021/07/26/post-381/
+これは起動時に実行したら楽そう
+
+バックエンド使えそうなやつら(API)
