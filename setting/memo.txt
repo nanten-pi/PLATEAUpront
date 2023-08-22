@@ -49,4 +49,8 @@ GPSの情報をPLATEAUのマップに変換　その地点での強度を記録�
 強度マップデータをAPIにポン投げ（ここの更新は１分毎とか）＃＃ここのＡＰＩは座標データを受け取ったらそこから映像を製造しそのＵＲＬを返す
 
 バックエンドに使うサービスソフトウェア
+Firebase Cloud Functionsがいいかな(下が使えそうなやつ一覧の記事)
+https://lhaplus.biz/flutter_server/
+Firebase君↓
+https://firebase.google.com/?hl=ja
 
