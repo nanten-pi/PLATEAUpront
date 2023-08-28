@@ -8,6 +8,8 @@ ios android双方に向けて作る？ PC向けにもBuildする予定
 暗号化はRSAで文字列を簡単な暗号化にかけるだけにする（HTTPSなどは用いない？）
 
 表示としては、霧みたいなやつ考えてた
+プラトーのチュートリ
+https://www.mlit.go.jp/plateau/learning/tpc00/
 
 フロントエンド使えそうな記事
 https://itnext.io/network-connectivity-in-flutter-15e16c2598f
