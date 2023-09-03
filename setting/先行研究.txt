@@ -1,0 +1,39 @@
+https://search.ieice.org/bin/pdf_link.php?category=D&lang=J&year=2012&fname=j95-d_5_1070&abst=
+東日本大震災における情報技術の活用と課題について
+クラウドコンピューティングの活用の有用性が示されている
+'''クラウドコンピューティングは，情報提
+供サイトや支援物資・ボランティア・避難者の管理シ
+ステムの迅速な立ち上げ，様々な情報への大量アクセ
+スの処理に利用され，その有効性を示した．それ以外
+にも，医療や健康管理などの被災地での支援活動を支
+えるため，ICT は様々な場面で利用され，復旧・復興
+の一助となっている'''
+https://www.jeita.or.jp/ictot/topics/pdf/110729.pdf
+実際に活用されていた事例
+https://ipsj.ixsq.nii.ac.jp/ej/?action=pages_view_main&active_action=repository_view_main_item_detail&item_id=147451&item_no=1&page_id=13&block_id=8
+'''著者らは現在，より多くの人に「あかりマップ」を
+利用し始めてもらうために，「あかりマップ」が表示す
+る情報を避難支援情報だけでなく，地域の観光地情報
+などを表示し，避難支援情報とあわせて閲覧可能な仕
+組みを考えている．この仕組みについて，各実験協力
+者に意見を聞いた．協力者 A，協力者 D は提案した仕
+組みに同意し，さらに協力者 D からは，「地図上に過
+去の災害の簡易情報を載せるといい」という意見が得
+られた．また，協力者 B，協力者 C からは，「災害発
+生時のいざというときに，観光地情報が出てきても困
+る．観光地情報を載せるのなら，別のアプリとして存
+在した方がいい」という意見が得られた．これらのこ
+とから，避難支援情報と観光地情報をあわせて地図上
+に表示するのではなく，避難支援情報を表示するモー
+ドと観光地情報を表示するモードを用意し，ボタンを
+押すことで表示のモードを切替え可能な仕組みが有効
+だと考えられる'''重要な知見
+https://www.jstage.jst.go.jp/article/jrsj1983/26/6/26_6_553/_pdf/-char/ja
+ロボットの活用?
+https://ipsj.ixsq.nii.ac.jp/ej/?action=pages_view_main&active_action=repository_view_main_item_detail&item_id=17742&item_no=1&page_id=13&block_id=8
+想定しているシステム方式とは違うが参考になるかも
+（分散クラスタ化している）
+
+https://info.hitachi-ics.co.jp/product/wl3dsim/
+3Dモデル化
+
