@@ -33,3 +33,33 @@
 BLenderプログラムの開発
 の４点（また会議すること）
 
+情報部PC
+Blender
+Davinchi
+Visual Studio
+Unity
+TeraPad
+XAMPP
+Android Studio
+Chrome
+VSC
+xedit
+VM Virtual Box
+MSI After Burner
+Burp Site
+Wire Shark
+github desktop
+Aviutl
+Inkscape
+GIMP
+開発、実行環境
+Git
+GNU Compiler
+Python
+C/C++/C#
+Java
+Flutter
+Nvidia Control Panel
+Ruby on Rails
+Docker
+Anaconda
