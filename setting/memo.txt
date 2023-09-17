@@ -10,7 +10,7 @@ ios android双方に向けて作る？ PC向けにもBuildする予定
 表示としては、霧みたいなやつ考えてた
 プラトーのチュートリ
 https://www.mlit.go.jp/plateau/learning/tpc00/
-
+///
 フロントエンド使えそうな記事
 https://itnext.io/network-connectivity-in-flutter-15e16c2598f
 https://pub.dev/packages/internet_speed_test
@@ -22,23 +22,26 @@ https://qiita.com/kazutxt/items/1af63e9e32a780daba32
 https://note.jpn.pioneer/n/n25998ea6422f
 GPSのデータを取得可能
 高さデータの取得はむずそう
+https://qiita.com/kenichiro-yamato/items/ce7d77e9c733c24024d8
+https://note.com/blue_69/n/nc7c0269947e0
+この辺も参考になりそう
+https://www.automation-technology.info/index.php/2021/07/26/post-381/
+これは起動時に実行したら楽そう
+///
+
 https://zenn.dev/heyhey1028/books/flutter-basics/viewer/getting_started_windows
 windowsへの導入方法　むずそう
 https://zenn.dev/flutteruniv_dev/articles/20220403-075051-flutter-windows-app
 ちゃんとWindows向けにBuild可能
 https://qiita.com/kenichiro-yamato/items/12d7199cb2d7812ac0ce
 API向けのpost(httpで)は可能っぽい
-https://qiita.com/kenichiro-yamato/items/ce7d77e9c733c24024d8
-https://note.com/blue_69/n/nc7c0269947e0
-この辺も参考になりそう
-https://www.automation-technology.info/index.php/2021/07/26/post-381/
-これは起動時に実行したら楽そう
+///
 
 アプリ起動時にフロントエンドでは、自分のGPS位置情報を送りつけて　霧状のマップデータを受信する（imgだけど）
 https://qiita.com/murapon/items/0d3006a3bd51cfe104f7
 取得するやつ
 ！！処理としては、1.自分のGPSデータをサーバへ送信　２.サーバーのデータベース（コンバーター）から座標データを取得　３．それをもとにURLを生成する（URLの部分に画像も割り当てる）　４.画像を取得する
-
+///
 
 バックエンド使えそうなやつら(API)
 バックエンド結構めんどくさい
