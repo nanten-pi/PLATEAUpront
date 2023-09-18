@@ -61,3 +61,9 @@ https://firebase.google.com/?hl=ja
 んでさすがにもうrubyまでさらにやるのはきついので、node.jsでやる
 node.jsは18.17.1 lts
  Flutter (Channel stable, 3.13.0, on Microsoft Windows [Version 10.0.22621.1702], locale ja-JP)
+https://mash-pro.com/flutter-connect-nodejs/
+flutterとnode.jsの接続　macだけどwindows,linuxでもできると思う!
+
+https://dev.classmethod.jp/articles/flutter-getting-start-web-page/
+androidは禿げるほど重いのでwebでじっこうするのが吉
+chrome必須www
