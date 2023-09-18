@@ -59,4 +59,5 @@ https://firebase.google.com/?hl=ja
 
 多分node.jsかruby on railsのほうがいいかも
 んでさすがにもうrubyまでさらにやるのはきついので、node.jsでやる
-
+node.jsは18.17.1 lts
+ Flutter (Channel stable, 3.13.0, on Microsoft Windows [Version 10.0.22621.1702], locale ja-JP)
