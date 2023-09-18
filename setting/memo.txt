@@ -57,3 +57,6 @@ https://firebase.google.com/?hl=ja
 以下糞雑魚説明
 ・firebaseのプロジェクト作って、CLIインストールしてプロジェクトに接続。Functionsをいい感じにつくってデプロイ。HTTPパッケージを使用してAPIリクエストを送信することでFlutterアプリからCloud Functionを呼び出す。
 
+多分node.jsかruby on railsのほうがいいかも
+んでさすがにもうrubyまでさらにやるのはきついので、node.jsでやる
+
