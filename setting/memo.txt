@@ -67,3 +67,9 @@ flutterとnode.jsの接続　macだけどwindows,linuxでもできると思う!
 https://dev.classmethod.jp/articles/flutter-getting-start-web-page/
 androidは禿げるほど重いのでwebでじっこうするのが吉
 chrome必須www
+
+https://itome.team/blog/2023/02/fluttter-scene-memo/
+3DのFlutter
+
+https://www.youtube.com/watch?v=Us73IbVsbDc
+作例
