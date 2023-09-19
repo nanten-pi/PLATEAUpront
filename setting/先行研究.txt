@@ -36,6 +36,13 @@ https://ipsj.ixsq.nii.ac.jp/ej/?action=pages_view_main&active_action=repository_
 
 https://info.hitachi-ics.co.jp/product/wl3dsim/
 3Dモデル化
+https://www.mlit.go.jp/plateau/journal/?page=2
+いろいろ
+例:
+https://www.mlit.go.jp/plateau/journal/j020-3/
+https://www.mlit.go.jp/plateau/journal/j020-2/
+https://www.mlit.go.jp/plateau/journal/j020-1/
+https://www.mlit.go.jp/plateau/journal/j033/
 
 suppi
 suppi
