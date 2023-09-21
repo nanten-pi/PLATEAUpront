@@ -99,12 +99,7 @@ class MyHomePage extends StatelessWidget {
           ),
         ],
       ),
-      body: const Center(
-        child: Text(
-          '表示場所。内容は無いようです。',
-          style: TextStyle(fontSize: 24.0),
-        ),
-      ),
+      //hage
       bottomNavigationBar: BottomAppBar(
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
