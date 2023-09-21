@@ -145,6 +145,7 @@ class ExampleApp extends ConsumerWidget {
   }
 }
 
+//予備役
 class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
