@@ -34,6 +34,7 @@ class _MainScreenState extends State<MainScreen> {
           ),
           //ここでExampleAppクラスを呼び出している
           const ExampleApp(),
+          MyHomePage(),
         ],
       ),
     );
@@ -76,6 +77,57 @@ class ExampleApp extends ConsumerWidget {
             ),
           );
         },
+      ),
+    );
+  }
+}
+
+// ktkrwktkこれあれっす、ヘッダフッターっす。
+class MyHomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('うんちごみしね'),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.menu), // ハンバーガーメニュー君な筈。できてるかは知らん
+            onPressed: () {
+              // アクションとか追加できるじょー(多分)
+            },
+          ),
+        ],
+      ),
+      body: Center(
+        child: Text(
+          '表示場所。内容は無いようです。',
+          style: TextStyle(fontSize: 24.0),
+        ),
+      ),
+      bottomNavigationBar: BottomAppBar(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            IconButton(
+              icon: Icon(Icons.map),
+              onPressed: () {
+                // 下のボタン１号クン
+              },
+            ),
+            IconButton(
+              icon: Icon(Icons.article),
+              onPressed: () {
+                //　下のボタン２号クン
+              },
+            ),
+            IconButton(
+              icon: Icon(Icons.layers),
+              onPressed: () {
+                // 下のボタン３号クン
+              },
+            ),
+          ],
+        ),
       ),
     );
   }
