@@ -88,7 +88,7 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('うんちごみしね'),
+        title: Text('Clocky'),
         actions: [
           IconButton(
             icon: Icon(Icons.menu), // ハンバーガーメニュー君な筈。できてるかは知らん
