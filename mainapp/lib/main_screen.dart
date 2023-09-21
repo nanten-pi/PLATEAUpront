@@ -37,19 +37,40 @@ class _MainScreenState extends State<MainScreen> {
               decoration: BoxDecoration(
                 color: Colors.blue,
               ),
-              child: Text('メニュー'),
+              child: Text('Clocky'),
             ),
             ListTile(
-              title: const Text('メニュー1'),
+              title: const Text('気象情報'),
               onTap: () {
                 // メニュー1のアクションを追加
                 Navigator.pop(context); // メニューを閉じる
               },
             ),
             ListTile(
-              title: const Text('メニュー2'),
+              title: const Text('公共交通機関の情報'),
               onTap: () {
                 // メニュー2のアクションを追加
+                Navigator.pop(context); // メニューを閉じる
+              },
+            ),
+            ListTile(
+              title: const Text('自治体からのお知らせ'),
+              onTap: () {
+                // メニュー3のアクションを追加
+                Navigator.pop(context); // メニューを閉じる
+              },
+            ),
+            ListTile(
+              title: const Text('地図'),
+              onTap: () {
+                // メニュー4のアクションを追加
+                Navigator.pop(context); // メニューを閉じる
+              },
+            ),
+            ListTile(
+              title: const Text('通信環境'),
+              onTap: () {
+                // メニュー5のアクションを追加
                 Navigator.pop(context); // メニューを閉じる
               },
             ),
