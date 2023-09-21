@@ -25,7 +25,7 @@ class _MainScreenState extends State<MainScreen> {
               //押された検知
               onPressed: () {
                 final viewModel = ref.read(viewModelProvider.notifier);
-                //なんかよーわからんことしてるでしょ
+                //viewmodel.dartのretrieveMessageを呼び出している
                 viewModel.retrieveMessage();
               },
               //ボタンの中身（ウィジェット)
@@ -67,6 +67,7 @@ class ExampleApp extends ConsumerWidget {
             },
             //ロード中
             loading: () => const Center(
+              //ぐるぐるマーク
               child: CircularProgressIndicator(),
             ),
             //エラー

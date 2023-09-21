@@ -5,6 +5,7 @@ import 'package:mainapp/irepository.dart';
 import 'package:mainapp/message_dto.dart';
 import 'package:mainapp/repository.dart';
 
+//画面からの指示を振り分けるファイルかな
 final viewModelProvider =
     StateNotifierProvider<ViewModel, AsyncValue<MessageDTO>>(
         (ref) => ViewModel(Repository(Api(ref.watch(dioProvider)))));
