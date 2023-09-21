@@ -20,6 +20,8 @@ https://pub.dev/packages/wifi_hunter
 https://zenn.dev/namioto/articles/3abb0ccf8d8fb6
 https://qiita.com/kazutxt/items/1af63e9e32a780daba32
 https://note.jpn.pioneer/n/n25998ea6422f
+https://zuma-lab.com/posts/flutter-google-maps-with-location
+これは小数点3桁までの
 GPSのデータを取得可能
 高さデータの取得はむずそう
 https://qiita.com/kenichiro-yamato/items/ce7d77e9c733c24024d8
