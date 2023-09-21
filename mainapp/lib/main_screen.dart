@@ -8,7 +8,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter カウンター',
+      title: 'うんちごみしね',
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
@@ -17,49 +17,51 @@ class MyApp extends StatelessWidget {
   }
 }
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key? key}) : super(key: key);
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
-}
-
-class _MyHomePageState extends State<MyHomePage> {
-  int _counter = 0;
-
-  void _incrementCounter() {
-    setState(() {
-      _counter++;
-    });
-  }
-
+class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Flutter カウンター'),
+        title: Text('うんちごみしね'),
+        actions: [
+          IconButton(
+            icon: Icon(Icons.menu), // ハンバーガーメニュー君な筈。できてるかは知らん
+            onPressed: () {
+              // アクションとか追加できるじょー(多分)
+            },
+          ),
+        ],
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Text(
-              'ボタンを押すとカウントが増えます:',
+        child: Text(
+          '表示場所。内容は無いようです。',
+          style: TextStyle(fontSize: 24.0),
+        ),
+      ),
+      bottomNavigationBar: BottomAppBar(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            IconButton(
+              icon: Icon(Icons.button1),
+              onPressed: () {
+                // 下のボタン１号クン
+              },
             ),
-            Text(
-              '$_counter',
-              style: TextStyle(
-                fontSize: 48.0,
-                fontWeight: FontWeight.bold,
-              ),
+            IconButton(
+              icon: Icon(Icons.button2),
+              onPressed: () {
+                //　下のボタン２号クン
+              },
+            ),
+            IconButton(
+              icon: Icon(Icons.button3),
+              onPressed: () {
+                // 下のボタン３号クン
+              },
             ),
           ],
         ),
-      ),
-      floatingActionButton: FloatingActionButton(
-        onPressed: _incrementCounter,
-        tooltip: 'インクリメント',
-        child: Icon(Icons.add),
       ),
     );
   }
