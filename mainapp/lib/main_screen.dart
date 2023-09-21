@@ -89,17 +89,17 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Clocky'),
+        title: const Text('Clocky'),
         actions: [
           IconButton(
-            icon: Icon(Icons.menu), // ハンバーガーメニュー君な筈。できてるかは知らん
+            icon: const Icon(Icons.menu), // ハンバーガーメニュー君な筈。できてるかは知らん
             onPressed: () {
               // アクションとか追加できるじょー(多分)
             },
           ),
         ],
       ),
-      body: Center(
+      body: const Center(
         child: Text(
           '表示場所。内容は無いようです。',
           style: TextStyle(fontSize: 24.0),
@@ -110,19 +110,19 @@ class MyHomePage extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
             IconButton(
-              icon: Icon(Icons.map),
+              icon: const Icon(Icons.map),
               onPressed: () {
                 // 下のボタン１号クン
               },
             ),
             IconButton(
-              icon: Icon(Icons.article),
+              icon: const Icon(Icons.article),
               onPressed: () {
                 //　下のボタン２号クン
               },
             ),
             IconButton(
-              icon: Icon(Icons.layers),
+              icon: const Icon(Icons.layers),
               onPressed: () {
                 // 下のボタン３号クン
               },
