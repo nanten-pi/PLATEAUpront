@@ -20,11 +20,15 @@ class _MainScreenState extends State<MainScreen> {
       body: Column(
         children: [
           Consumer(
+            //ボタンを定義
             builder: (context, ref, builder) => ElevatedButton(
+              //押された検知
               onPressed: () {
                 final viewModel = ref.read(viewModelProvider.notifier);
+                //なんかよーわからんことしてるでしょ
                 viewModel.retrieveMessage();
               },
+              //ボタンの中身（ウィジェット)
               child: const Text("get data"),
             ),
           ),
@@ -49,19 +53,23 @@ class ExampleApp extends ConsumerWidget {
           ref,
           builder,
         ) {
+          //main.dartのviewModelProviderを読み込んでいる　仮説であるがクラス間の設定を同期してる?
           final viewModel = ref.watch(viewModelProvider);
           return viewModel.when(
             data: (data) {
               return Center(
+                //受け取ったデータを表示している
                 child: Text(
                   data.message,
                   style: const TextStyle(fontSize: 30),
                 ),
               );
             },
+            //ロード中
             loading: () => const Center(
               child: CircularProgressIndicator(),
             ),
+            //エラー
             error: (error, stack) => const Center(
               child: Text("oops"),
             ),
