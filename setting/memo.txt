@@ -20,6 +20,8 @@ https://pub.dev/packages/wifi_hunter
 https://zenn.dev/namioto/articles/3abb0ccf8d8fb6
 https://qiita.com/kazutxt/items/1af63e9e32a780daba32
 https://note.jpn.pioneer/n/n25998ea6422f
+https://zuma-lab.com/posts/flutter-google-maps-with-location
+これは小数点3桁までの
 GPSのデータを取得可能
 高さデータの取得はむずそう
 https://qiita.com/kenichiro-yamato/items/ce7d77e9c733c24024d8
@@ -73,3 +75,21 @@ https://itome.team/blog/2023/02/fluttter-scene-memo/
 
 https://www.youtube.com/watch?v=Us73IbVsbDc
 作例
+
+https://betterprogramming.pub/how-to-connect-flutter-to-node-js-3e13b356c08d
+flutterとnode.jsの接続　macだけどwindows,linuxでもできると思う!
+
+https://qiita.com/chooyan_eng/items/7c7298795f2db24b24a5
+widgetsの説明
+https://docs.flutter.dev/ui/widgets
+widgetsの公式ドキュメント
+https://api.flutter.dev/flutter/material/BottomAppBar-class.html
+
+https://qiita.com/konifar/items/92307f5dacec90e63d91
+トラシュー
+https://isub.co.jp/flutter/flutter-http-api/
+API
+https://tech-blog.yayoi-kk.co.jp/entry/2023/05/23/110000#Flutter%E3%81%A7%E4%BD%9C%E3%82%8Bmisoca%E3%82%AF%E3%83%A9%E3%82%A4%E3%82%A2%E3%83%B3%E3%83%88
+
+https://qiita.com/kurun_pan/items/f9251b1827ce9dca9e14
+コマンド一覧

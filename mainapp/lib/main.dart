@@ -1,20 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:mainapp/main_screen.dart';
 
+//アプリの実行　すべての源
 void main() {
-  runApp(const MainApp());
+  runApp(const ProviderScope(child: MyApp()));
 }
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
-
+//多分こいつが大本のクラス
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Text('Hello World!'),
-        ),
+    return MaterialApp(
+      title: 'Clocky',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
+        useMaterial3: true,
       ),
+      //中身はmain_screen.dartのMainScreenクラス
+      home: const MainScreen(),
     );
   }
 }
