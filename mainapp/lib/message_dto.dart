@@ -9,11 +9,6 @@ part 'message_dto.g.dart';
 abstract class MessageDTO with _$MessageDTO {
   const factory MessageDTO({
     required String message,
-    required int locationx,
-    required int locationy,
-    required int time,
-    required int danger,
-    @Default(false) bool isPremium,
   }) = _MessageDTO;
 //自動生成のやつでjsonのクラスは設定されてる???
   factory MessageDTO.fromJson(Map<String, dynamic> json) =>
