@@ -2,10 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:mainapp/main_screen.dart';
 
+//アプリの実行　すべての源
 void main() {
   runApp(const ProviderScope(child: MyApp()));
 }
 
+//多分こいつが大本のクラス
 class MyApp extends StatelessWidget {
   const MyApp({super.key});
   @override
@@ -16,6 +18,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
+      //中身はmain_screen.dartのMainScreenクラス
       home: const MainScreen(),
     );
   }

@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:mainapp/viewmodel.dart';
 
+//main.dartによって呼ばれるMainScreenクラス
 class MainScreen extends StatefulWidget {
   const MainScreen({super.key});
 
@@ -10,6 +11,7 @@ class MainScreen extends StatefulWidget {
   State<MainScreen> createState() => _MainScreenState();
 }
 
+//MainScreenを継承している
 class _MainScreenState extends State<MainScreen> {
   final dio = Dio();
   @override
@@ -26,6 +28,7 @@ class _MainScreenState extends State<MainScreen> {
               child: const Text("get data"),
             ),
           ),
+          //ここでExampleAppクラスを呼び出している
           const ExampleApp(),
         ],
       ),
@@ -33,6 +36,7 @@ class _MainScreenState extends State<MainScreen> {
   }
 }
 
+//ここでExampleAppクラスを定義している
 class ExampleApp extends ConsumerWidget {
   const ExampleApp({Key? key}) : super(key: key);
 
