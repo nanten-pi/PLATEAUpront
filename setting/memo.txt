@@ -73,3 +73,6 @@ https://itome.team/blog/2023/02/fluttter-scene-memo/
 
 https://www.youtube.com/watch?v=Us73IbVsbDc
 作例
+
+https://betterprogramming.pub/how-to-connect-flutter-to-node-js-3e13b356c08d
+flutterとnode.jsの接続　macだけどwindows,linuxでもできると思う!
