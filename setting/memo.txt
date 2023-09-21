@@ -78,3 +78,12 @@ https://www.youtube.com/watch?v=Us73IbVsbDc
 
 https://betterprogramming.pub/how-to-connect-flutter-to-node-js-3e13b356c08d
 flutterとnode.jsの接続　macだけどwindows,linuxでもできると思う!
+
+https://qiita.com/chooyan_eng/items/7c7298795f2db24b24a5
+widgetsの説明
+https://docs.flutter.dev/ui/widgets
+widgetsの公式ドキュメント
+https://api.flutter.dev/flutter/material/BottomAppBar-class.html
+
+https://qiita.com/konifar/items/92307f5dacec90e63d91
+トラシュー
