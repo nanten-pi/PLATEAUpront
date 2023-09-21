@@ -37,7 +37,7 @@ class _MainScreenState extends State<MainScreen> {
               decoration: BoxDecoration(
                 color: Colors.blue,
               ),
-              child: Text('Clocky'),
+              child: Text('Clocky あくまで試験です'),
             ),
             ListTile(
               title: const Text('気象情報'),
