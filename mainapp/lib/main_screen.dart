@@ -33,21 +33,21 @@ class _MainScreenState extends State<MainScreen> {
         child: ListView(
           padding: EdgeInsets.zero,
           children: <Widget>[
-            DrawerHeader(
-              child: Text('メニュー'),
+            const DrawerHeader(
               decoration: BoxDecoration(
                 color: Colors.blue,
               ),
+              child: Text('メニュー'),
             ),
             ListTile(
-              title: Text('メニュー1'),
+              title: const Text('メニュー1'),
               onTap: () {
                 // メニュー1のアクションを追加
                 Navigator.pop(context); // メニューを閉じる
               },
             ),
             ListTile(
-              title: Text('メニュー2'),
+              title: const Text('メニュー2'),
               onTap: () {
                 // メニュー2のアクションを追加
                 Navigator.pop(context); // メニューを閉じる
@@ -151,28 +151,28 @@ class MyHomePage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Flutter サンプル UI'),
+        title: const Text('Flutter サンプル UI'),
       ),
       drawer: Drawer(
         // ハンバーガーメニューのコンテンツ
         child: ListView(
           padding: EdgeInsets.zero,
           children: <Widget>[
-            DrawerHeader(
+            const DrawerHeader(
               child: Text('メニュー'),
               decoration: BoxDecoration(
                 color: Colors.blue,
               ),
             ),
             ListTile(
-              title: Text('メニュー1'),
+              title: const Text('メニュー1'),
               onTap: () {
                 // メニュー1のアクションを追加
                 Navigator.pop(context); // メニューを閉じる
               },
             ),
             ListTile(
-              title: Text('メニュー2'),
+              title: const Text('メニュー2'),
               onTap: () {
                 // メニュー2のアクションを追加
                 Navigator.pop(context); // メニューを閉じる
@@ -181,7 +181,7 @@ class MyHomePage extends StatelessWidget {
           ],
         ),
       ),
-      body: Center(
+      body: const Center(
         child: Text(
           '中央の空白のUI',
           style: TextStyle(fontSize: 24.0),
@@ -189,16 +189,16 @@ class MyHomePage extends StatelessWidget {
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: [
-          BottomNavigationBarItem(
-            icon: const Icon(Icons.home),
+          const BottomNavigationBarItem(
+            icon: Icon(Icons.home),
             label: 'ホーム',
           ),
-          BottomNavigationBarItem(
-            icon: const Icon(Icons.search),
+          const BottomNavigationBarItem(
+            icon: Icon(Icons.search),
             label: '検索',
           ),
-          BottomNavigationBarItem(
-            icon: const Icon(Icons.settings),
+          const BottomNavigationBarItem(
+            icon: Icon(Icons.settings),
             label: '設定',
           ),
         ],
