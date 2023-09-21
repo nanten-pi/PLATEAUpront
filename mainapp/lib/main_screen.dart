@@ -21,12 +21,40 @@ class _MainScreenState extends State<MainScreen> {
         title: const Text('Clocky'),
         actions: [
           IconButton(
-            icon: const Icon(Icons.menu), // ハンバーガーメニュー君な筈。できてるかは知らん
+            icon: const Icon(Icons.settings), // ハンバーガーメニュー君な筈。できてるかは知らん
             onPressed: () {
               // アクションとか追加できるじょー(多分)
             },
           ),
         ],
+      ),
+      drawer: Drawer(
+        // ハンバーガーメニューのコンテンツ
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: <Widget>[
+            DrawerHeader(
+              child: Text('メニュー'),
+              decoration: BoxDecoration(
+                color: Colors.blue,
+              ),
+            ),
+            ListTile(
+              title: Text('メニュー1'),
+              onTap: () {
+                // メニュー1のアクションを追加
+                Navigator.pop(context); // メニューを閉じる
+              },
+            ),
+            ListTile(
+              title: Text('メニュー2'),
+              onTap: () {
+                // メニュー2のアクションを追加
+                Navigator.pop(context); // メニューを閉じる
+              },
+            ),
+          ],
+        ),
       ),
       bottomNavigationBar: BottomAppBar(
         child: Row(
@@ -111,6 +139,77 @@ class ExampleApp extends ConsumerWidget {
               child: Text("oops"),
             ),
           );
+        },
+      ),
+    );
+  }
+}
+
+class MyHomePage extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: Text('Flutter サンプル UI'),
+      ),
+      drawer: Drawer(
+        // ハンバーガーメニューのコンテンツ
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: <Widget>[
+            DrawerHeader(
+              child: Text('メニュー'),
+              decoration: BoxDecoration(
+                color: Colors.blue,
+              ),
+            ),
+            ListTile(
+              title: Text('メニュー1'),
+              onTap: () {
+                // メニュー1のアクションを追加
+                Navigator.pop(context); // メニューを閉じる
+              },
+            ),
+            ListTile(
+              title: Text('メニュー2'),
+              onTap: () {
+                // メニュー2のアクションを追加
+                Navigator.pop(context); // メニューを閉じる
+              },
+            ),
+          ],
+        ),
+      ),
+      body: Center(
+        child: Text(
+          '中央の空白のUI',
+          style: TextStyle(fontSize: 24.0),
+        ),
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        items: [
+          BottomNavigationBarItem(
+            icon: const Icon(Icons.home),
+            label: 'ホーム',
+          ),
+          BottomNavigationBarItem(
+            icon: const Icon(Icons.search),
+            label: '検索',
+          ),
+          BottomNavigationBarItem(
+            icon: const Icon(Icons.settings),
+            label: '設定',
+          ),
+        ],
+        // フッターナビゲーションのアクションハンドラを追加
+        onTap: (int index) {
+          if (index == 0) {
+            // ホームをタップした場合のアクション
+          } else if (index == 1) {
+            // 検索をタップした場合のアクション
+          } else if (index == 2) {
+            // 設定をタップした場合のアクション
+          }
         },
       ),
     );
