@@ -2,7 +2,13 @@ const express = require("express");
 //インスタンスの作成
 const app = express();
 //JSONの作成
-let messageJson = { message: "Hello Flutter!" };
+let messageJson = {
+    "message": "Hello World!",
+    "locationx": 0,
+    "locationy": 0,
+    "time": 0,
+    "danger": 0
+};
 //JSONを送信(ファイル実行時のみ)
 app.use(express.json());
 //「ドメイン/message」というURLに一致していた場合res(返信）としてmessageJsonという変数を返す
