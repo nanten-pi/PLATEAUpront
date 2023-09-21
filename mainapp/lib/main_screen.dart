@@ -34,7 +34,7 @@ class _MainScreenState extends State<MainScreen> {
           ),
           //ここでExampleAppクラスを呼び出している
           const ExampleApp(),
-          MyHomePage(),
+          const MyHomePage(),
         ],
       ),
     );
@@ -84,6 +84,7 @@ class ExampleApp extends ConsumerWidget {
 
 // ktkrwktkこれあれっす、ヘッダフッターっす。
 class MyHomePage extends StatelessWidget {
+  const MyHomePage({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
     return Scaffold(
