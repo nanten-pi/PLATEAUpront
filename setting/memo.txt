@@ -96,3 +96,12 @@ https://qiita.com/kurun_pan/items/f9251b1827ce9dca9e14
 
 https://pub.dev/packages/flutter_unity
 unityとの連携
+
+https://zenn.dev/dk96424/articles/13f7a0f69b8317#model-viewer%E3%81%A8%E3%81%AF
+一応3dモデル
+https://web-xr.studio/jp/doc/export
+
+https://u-rth.com/2021unitygltfglb/
+unityでglbファイルを作る方法
+
+https://www.crossroad-tech.com/entry/bvh-glb-blender-export
