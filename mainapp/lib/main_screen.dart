@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:mainapp/read2d_screen.dart';
 import 'package:mainapp/read3d_screen.dart';
+import 'package:mainapp/setting.dart';
 import 'package:mainapp/viewmodel.dart';
 import 'package:mainapp/write_screen.dart';
 
@@ -37,6 +38,10 @@ class _MainScreenState extends State<MainScreen> {
           IconButton(
             icon: const Icon(Icons.settings), // ハンバーガーメニュー君な筈。できてるかは知らん
             onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const settingPage()),
+              );
               // アクションとか追加できるじょー(多分)
             },
           ),
