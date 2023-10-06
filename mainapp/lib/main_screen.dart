@@ -101,6 +101,7 @@ class _MainScreenState extends State<MainScreen> {
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
+            //ここは画面遷移を実装して対処する（本体の実装画面とソースコードのツリーがかぶるから)
             IconButton(
               icon: const Icon(Icons.map),
               onPressed: () {
