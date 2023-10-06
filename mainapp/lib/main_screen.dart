@@ -1,8 +1,10 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:mainapp/read2d_screen.dart';
 import 'package:mainapp/read3d_screen.dart';
 import 'package:mainapp/viewmodel.dart';
+import 'package:mainapp/write_screen.dart';
 
 //url_launcher
 import 'package:url_launcher/url_launcher.dart';
@@ -107,7 +109,8 @@ class _MainScreenState extends State<MainScreen> {
                 // 下のボタン１号クン
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => NextPage()),
+                  MaterialPageRoute(
+                      builder: (context) => const web3DviewPage()),
                 );
               },
             ),
@@ -115,12 +118,20 @@ class _MainScreenState extends State<MainScreen> {
               icon: const Icon(Icons.article),
               onPressed: () {
                 //　下のボタン２号クン
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const MapPage()),
+                );
               },
             ),
             IconButton(
               icon: const Icon(Icons.layers),
               onPressed: () {
                 // 下のボタン３号クン
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const writeingPage()),
+                );
               },
             ),
           ],
