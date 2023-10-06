@@ -12,7 +12,7 @@ class NextPage extends StatelessWidget {
           title: const Text('Clocky3dViewer'),
         ),
         body: const ModelViewer(
-          //webにないものでもおｋっぽい
+          //assetsでも可能
           src: 'https://modelviewer.dev/shared-assets/models/NeilArmstrong.glb',
           autoRotate: true,
           cameraControls: true,
