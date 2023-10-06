@@ -21,3 +21,6 @@ class NextPage extends StatelessWidget {
   }
 }
 //コード整形便利すぎる
+//android error
+//ERR_CLEARTEXT_NOT_PERMITTED
+//Webpage not available
