@@ -6,6 +6,7 @@ import 'package:pretty_dio_logger/pretty_dio_logger.dart';
 
 //dioを使った通信を行う方法のファイル
 final Provider<Dio> dioProvider = Provider((ref) {
+  //ここにドメインを割り当てておく(nantend.netつかっておけばいいかな)
   final Dio dio = Dio(BaseOptions(baseUrl: "http://localhost:8000/"));
   dio.interceptors
     ..add(PrettyDioLogger())

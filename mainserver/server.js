@@ -11,5 +11,5 @@ app.get("/message", (req, res) => {
 });
 //ポート番号からの情報を確認(8000番ポートで起動)
 app.listen(8000, () => {
-    console.log("running...");
+    console.log("running server");
 });
