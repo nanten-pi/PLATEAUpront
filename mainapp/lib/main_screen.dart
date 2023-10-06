@@ -1,11 +1,11 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:mainapp/read3d_screen.dart';
 import 'package:mainapp/viewmodel.dart';
 //これはもしかしたらWindowsサ終案件かもしれん　対応が公式サイトによるとAndroidとiOSとwebだけだから
 import 'package:model_viewer_plus/model_viewer_plus.dart';
 //url_launcher
-import 'package:url_launcher/link.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 //できればこのurlもjsonで変えれるようにしたい
@@ -106,6 +106,10 @@ class _MainScreenState extends State<MainScreen> {
               icon: const Icon(Icons.map),
               onPressed: () {
                 // 下のボタン１号クン
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => NextPage()),
+                );
               },
             ),
             IconButton(
