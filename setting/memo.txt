@@ -117,3 +117,6 @@ https://blog.flutteruniv.com/flutter-package-url_launcher/
 画面遷移参考
 https://itome.team/blog/2023/02/fluttter-scene-memo/
 3dモデルを表示する画面
+
+https://web-creates.com/code/blender-threejs/
+jsでできるらしい（3Ⅾモデルビューワー）
