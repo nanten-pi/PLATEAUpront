@@ -6,6 +6,15 @@ import 'package:mainapp/viewmodel.dart';
 import 'package:model_viewer_plus/model_viewer_plus.dart';
 //url_launcher
 import 'package:url_launcher/link.dart';
+import 'package:url_launcher/url_launcher.dart';
+
+//できればこのurlもjsonで変えれるようにしたい
+final jmaurl = Uri.parse('https://www.jma.go.jp/jma/index.html');
+final mapurl = Uri.parse('https://www.google.com/maps');
+final jrurl = Uri.parse('https://www.westjr.co.jp/');
+final localgovernmenturl =
+    Uri.parse('https://www.city.higashihiroshima.lg.jp/index.html');
+final frequrl = Uri.parse('https://fast.com/ja/');
 
 //main.dartによって呼ばれるMainScreenクラス
 class MainScreen extends StatefulWidget {
@@ -47,32 +56,39 @@ class _MainScreenState extends State<MainScreen> {
               title: const Text('気象情報'),
               onTap: () {
                 // メニュー1のアクションを追加
-                Navigator.pop(context); // メニューを閉じる
+                launchUrl(jmaurl); // メニューを閉じる
               },
             ),
             ListTile(
               title: const Text('公共交通機関の情報'),
               onTap: () {
                 // メニュー2のアクションを追加
-                Navigator.pop(context); // メニューを閉じる
+                launchUrl(jrurl); // ちなみにjrwest
               },
             ),
             ListTile(
               title: const Text('自治体の発表'),
               onTap: () {
                 // メニュー3のアクションを追加
-                Navigator.pop(context); // メニューを閉じる
+                launchUrl(localgovernmenturl); //東広島市
               },
             ),
             ListTile(
               title: const Text('地図'),
               onTap: () {
                 // メニュー4のアクションを追加
-                Navigator.pop(context); // メニューを閉じる
+                launchUrl(mapurl); // googlemap
               },
             ),
             ListTile(
               title: const Text('通信環境'),
+              onTap: () {
+                // メニュー5のアクションを追加
+                launchUrl(frequrl); // 通信速度
+              },
+            ),
+            ListTile(
+              title: const Text('閉じる'),
               onTap: () {
                 // メニュー5のアクションを追加
                 Navigator.pop(context); // メニューを閉じる
