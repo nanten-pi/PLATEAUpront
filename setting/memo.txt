@@ -108,3 +108,5 @@ https://www.crossroad-tech.com/entry/bvh-glb-blender-export
 
 https://www.c-c-j.com/course/psychology/colortherapy/column/column07/
 色　心理効果　緑は安心感
+https://pub.dev/packages/url_launcher
+URLを開くやつ

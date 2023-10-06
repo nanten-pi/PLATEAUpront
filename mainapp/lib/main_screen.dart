@@ -2,6 +2,8 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:mainapp/viewmodel.dart';
+//これはもしかしたらWindowsサ終案件かもしれん　対応が公式サイトによるとAndroidとiOSとwebだけだから
+import 'package:model_viewer_plus/model_viewer_plus.dart';
 
 //main.dartによって呼ばれるMainScreenクラス
 class MainScreen extends StatefulWidget {
@@ -35,7 +37,7 @@ class _MainScreenState extends State<MainScreen> {
           children: <Widget>[
             const DrawerHeader(
               decoration: BoxDecoration(
-                color: Colors.blue,
+                color: Color.fromARGB(255, 25, 190, 143),
               ),
               child: Text('Clocky あくまで試験です'),
             ),
@@ -54,7 +56,7 @@ class _MainScreenState extends State<MainScreen> {
               },
             ),
             ListTile(
-              title: const Text('自治体からのお知らせ'),
+              title: const Text('自治体の発表'),
               onTap: () {
                 // メニュー3のアクションを追加
                 Navigator.pop(context); // メニューを閉じる
