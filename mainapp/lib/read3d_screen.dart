@@ -8,12 +8,15 @@ class NextPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Clocky3dViewer'),
-      ),
-      body: Container(
-        color: Colors.red,
-      ),
-    );
+        appBar: AppBar(
+          title: const Text('Clocky3dViewer'),
+        ),
+        body: const ModelViewer(
+          //webにないものでもおｋっぽい
+          src: 'https://modelviewer.dev/shared-assets/models/NeilArmstrong.glb',
+          autoRotate: true,
+          cameraControls: true,
+        ));
   }
 }
+//コード整形便利すぎる
