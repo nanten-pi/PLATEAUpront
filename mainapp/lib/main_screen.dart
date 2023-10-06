@@ -4,6 +4,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:mainapp/viewmodel.dart';
 //これはもしかしたらWindowsサ終案件かもしれん　対応が公式サイトによるとAndroidとiOSとwebだけだから
 import 'package:model_viewer_plus/model_viewer_plus.dart';
+//url_launcher
+import 'package:url_launcher/link.dart';
 
 //main.dartによって呼ばれるMainScreenクラス
 class MainScreen extends StatefulWidget {
@@ -37,7 +39,7 @@ class _MainScreenState extends State<MainScreen> {
           children: <Widget>[
             const DrawerHeader(
               decoration: BoxDecoration(
-                color: Color.fromARGB(255, 25, 190, 143),
+                color: Color.fromARGB(255, 14, 196, 120),
               ),
               child: Text('Clocky あくまで試験です'),
             ),
