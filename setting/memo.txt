@@ -122,3 +122,6 @@ https://web-creates.com/code/blender-threejs/
 jsでできるらしい（3Ⅾモデルビューワー）
 https://www.geospatial.jp/ckan/dataset/plateau-34100-hirosima-shi-2022
 広島市のデータ一覧
+
+webページをwebviewで表示する
+https://virment.com/how-to-show-webview-in-flutter-app/
