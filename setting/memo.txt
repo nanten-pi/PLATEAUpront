@@ -127,7 +127,9 @@ webページをwebviewで表示する
 https://virment.com/how-to-show-webview-in-flutter-app/
 https://www.mlit.go.jp/plateau/learning/tpc12-1/
 なんかやり方全部あったwww
-
+https://www.mlit.go.jp/plateau/learning/tpc12-2/
+その二
+やばあ
 mainserverはnode.jsで作る(express)
 3dserverはnodejsとthree.jsで作る(http-server)
 
