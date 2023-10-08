@@ -20,6 +20,7 @@ dependencies:
   retrofit: ^4.0.1
   retrofit_generator: ^7.0.8
   url_launcher: ^6.1.14
+  webview_flutter: ^4.4.1
 
 dev_dependencies:
   flutter_test:
