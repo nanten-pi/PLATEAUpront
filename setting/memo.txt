@@ -130,3 +130,5 @@ https://www.mlit.go.jp/plateau/learning/tpc12-1/
 
 mainserverはnode.jsで作る(express)
 3dserverはnodejsとthree.jsで作る(http-server)
+
+全部できたら位置をちゃんと把握してできるようにしたい
