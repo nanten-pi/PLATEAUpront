@@ -125,3 +125,8 @@ https://www.geospatial.jp/ckan/dataset/plateau-34100-hirosima-shi-2022
 
 webページをwebviewで表示する
 https://virment.com/how-to-show-webview-in-flutter-app/
+https://www.mlit.go.jp/plateau/learning/tpc12-1/
+なんかやり方全部あったwww
+
+mainserverはnode.jsで作る(express)
+3dserverはnodejsとthree.jsで作る(http-server)
