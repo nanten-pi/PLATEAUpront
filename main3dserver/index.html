@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <!-- Three.js本体とGLTFローダー -->
+    <script type="importmap">
+    {
+      "imports": {
+        "three" : "./js/three.module.js",
+        "three/loaders/": "./jsm/loaders/"
+      }
+    }
+    </script>
+
+    <script type="module">
+        import * as THREE from 'three';
+        import { GLTFLoader } from 'three/loaders/GLTFLoader.js';
+        let mouseX = 0, mouseY = 0;
+        let windowHalfX = window.innerWidth / 2;
+        let windowHalfY = window.innerHeight / 2;
+
+        // シーンを追加 
+        const scene = new THREE.Scene();
+        scene.background = new THREE.Color(0x333333);
+
+        // ライトを追加 
+        // 環境光 
+        const ambientLight = new THREE.AmbientLight(0xcccccc, 0.5);
+        scene.add(ambientLight);
+        // 太陽光 
+        const light = new THREE.DirectionalLight(0xFFFFFF, 1);
+        scene.add(light);
+        // ポイントライト 
+        const pointLight = new THREE.PointLight(0xffffff, 0.8);
+        scene.add(pointLight);
+
+        // 1km四方の地面を追加 
+        const geometry = new THREE.PlaneGeometry(1000, 1000);
+        const material = new THREE.MeshBasicMaterial(
+            { color: 0x666666, side: THREE.DoubleSide });
+        const plane = new THREE.Mesh(geometry, material);
+        plane.rotation.x = 90 * Math.PI / 180;
+        scene.add(plane);
+
+        // カメラの追加 
+        const camera = new THREE.PerspectiveCamera(
+            45, window.innerWidth / window.innerHeight, 1, 2000);
+        camera.position.z = 500;
+
+        // レンダラーを追加 
+        const renderer = new THREE.WebGLRenderer();
+        renderer.setPixelRatio(window.devicePixelRatio);
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        document.body.appendChild(renderer.domElement);
+
+        // 描画開始 
+        animate();
+
+        // GLTFファイルを読み込む 
+        const GLTFFILE = 'gltf/test.glb';
+        const gltfLoader = new GLTFLoader()
+        gltfLoader.load(GLTFFILE, (gltf) => {
+            scene.add(gltf.scene);
+        }, undefined, (error) => {
+            console.error(error);
+        });
+
+        // マウスイベントなどを設定 
+        document.addEventListener('mousemove', onDocumentMouseMove);
+        window.addEventListener('resize', onWindowResize);
+
+        // 描画処理 
+        function animate() {
+            requestAnimationFrame(animate);
+            render();
+        }
+
+        function render() {
+            camera.position.x += (mouseX - camera.position.x) * .05;
+            camera.position.y += (-mouseY - camera.position.y) * .05;
+            camera.lookAt(new THREE.Vector3(0, 10, 0));
+            renderer.render(scene, camera);
+        }
+
+        // リサイズ時のカメラ調整 
+        function onWindowResize() {
+            windowHalfX = window.innerWidth / 2;
+            windowHalfY = window.innerHeight / 2;
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        }
+
+        // マウスが動いたときの座標記録 
+        function onDocumentMouseMove(event) {
+            mouseX = (event.clientX - windowHalfX) / 2;
+            mouseY = (event.clientY - windowHalfY) / 2;
+        } 
+    </script>
+</body>
+
+</html>
