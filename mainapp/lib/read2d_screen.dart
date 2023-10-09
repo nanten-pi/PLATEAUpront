@@ -8,7 +8,8 @@ class MapPage extends StatelessWidget {
     return Scaffold(
       body: WebViewWidget(
         controller: WebViewController()
-          ..loadRequest(Uri.parse("https://www.google.com/maps/")),
+          ..setJavaScriptMode(JavaScriptMode.unrestricted)
+          ..loadRequest(Uri.parse("https://hiyoko-programming.com/")),
       ),
     );
   }
