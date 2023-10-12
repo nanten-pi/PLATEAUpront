@@ -153,3 +153,8 @@ objの方が楽かな?
 (v1使えました)
 https://www.mlit.go.jp/plateau/learning/tpc03-1/
 つまり何が言いたいの>??
+
+https://yattalog.jp/archives/1506
+けっきょくUnity?
+https://github.com/Project-PLATEAU/PLATEAU-SDK-for-Unity/releases
+UnityでのPLATEAUのSDK
