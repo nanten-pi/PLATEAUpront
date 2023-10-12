@@ -132,6 +132,18 @@ mainserverはnode.jsで作る(express)
 3dserverはnodejsとthree.jsで作る(http-server)
 
 全部できたら位置をちゃんと把握してできるようにしたい
+
+https://vldb.gsi.go.jp/sokuchi/surveycalc/surveycalc/bl2xyf.html
+緯度経度（GPSで取得可能なデータ）を平面直角座標系に変換するやつ
+GPSをメインにシステムを構築するのが善いのでは?
+https://www.mlit.go.jp/plateau/learning/tpc13-1/
+3dモデル>>直交座標系　
+（基本的にはすべて直角座標系で行う）
+よって変換はServer側でGPSのデータをもとに行う
+サーバーの機能拡充(すぐに!)
+https://www.mlit.go.jp/plateau/learning/tpc05-1/
+GIS 分析
+plateauを使う上で必要なツール群とサーバー側の拡充を早急に行う
 https://www.ipsj-kyushu.jp/page/ronbun/hinokuni/1012/Papers/A4-4.pdf
 CityGMLをどうやって3dで扱うか
 https://github.com/Project-PLATEAU/CityGML-production-system
