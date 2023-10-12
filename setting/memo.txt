@@ -132,3 +132,10 @@ mainserverはnode.jsで作る(express)
 3dserverはnodejsとthree.jsで作る(http-server)
 
 全部できたら位置をちゃんと把握してできるようにしたい
+https://www.ipsj-kyushu.jp/page/ronbun/hinokuni/1012/Papers/A4-4.pdf
+CityGMLをどうやって3dで扱うか
+https://github.com/Project-PLATEAU/CityGML-production-system
+fbxどうしよ?
+https://github.com/ksasao/PlateauCityGmlSharp
+objの方が楽かな?
+(v1使えました)
