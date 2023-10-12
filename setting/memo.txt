@@ -158,3 +158,8 @@ https://yattalog.jp/archives/1506
 けっきょくUnity?
 https://github.com/Project-PLATEAU/PLATEAU-SDK-for-Unity/releases
 UnityでのPLATEAUのSDK
+
+UnityでcityGMLからobjを作製
+そのobjを閲覧するまでを一体処理する
+書き込みはWeb側で強制処理orCityGMLで書き込んでそれをobj化
+こうひさ作業:DBの構築　バックグラウンドシステムの構築　3Dの準備（作業はくろっきーにやらせよう！部長ヨロシク！）
