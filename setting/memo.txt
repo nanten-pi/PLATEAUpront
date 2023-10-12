@@ -151,3 +151,5 @@ fbxどうしよ?
 https://github.com/ksasao/PlateauCityGmlSharp
 objの方が楽かな?
 (v1使えました)
+https://www.mlit.go.jp/plateau/learning/tpc03-1/
+つまり何が言いたいの>??
