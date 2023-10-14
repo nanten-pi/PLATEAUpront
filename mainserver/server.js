@@ -9,6 +9,9 @@ app.use(express.json());
 app.get("/message", (req, res) => {
     res.send(messageJson);
 });
+app.get("/GPS", (req, res) => {
+    res.send(messageJson);
+});
 //ポート番号からの情報を確認(8000番ポートで起動)
 app.listen(8000, () => {
     console.log("running server");
