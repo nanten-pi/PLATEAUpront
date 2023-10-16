@@ -165,3 +165,5 @@ UnityでcityGMLからobjを作製
 こうひさ作業:DBの構築　バックグラウンドシステムの構築　3Dの準備（作業はくろっきーにやらせよう！部長ヨロシク！）
 https://u-rth.com/2021unitygltfglb/
 Unity GLTF
+https://zenn.dev/mattak/articles/5dfa1a2369ebc0
+cli 
