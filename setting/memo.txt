@@ -168,3 +168,7 @@ Unity GLTF
 https://zenn.dev/mattak/articles/5dfa1a2369ebc0
 cli 
 https://docs.unity3d.com/ja/2018.4/Manual/CommandLineArguments.html
+
+https://syncer.jp/how-to-use-geolocation-api
+html中のjsでのGPS取得
+jsで縦横取得>関連性のある値を抽出>メッシュ番号へ変換>3dモデルのファイルを指定>表示 

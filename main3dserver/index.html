@@ -55,7 +55,46 @@
 
         // 描画開始 
         animate();
-        
+        //javascriptでGPSを取得
+        // 現在位置を取得する
+        function successFunc(position) {
+                // 緯度をアラート表示
+                alert(position.coords.latitude);
+
+                // 経度をアラート表示
+                alert(position.coords.longitude);
+                //変数に格納
+                // 取得したデータの整理
+                var data = position.coords;
+                // データの整理
+                var lat = data.latitude;
+                var lng = data.longitude;
+                var alt = data.altitude;
+                var accLatlng = data.accuracy;
+                var accAlt = data.altitudeAccuracy;
+                var heading = data.heading;			//0=北,90=東,180=南,270=西
+                var speed = data.speed;
+        }
+        // 失敗した時の関数
+        function errorFunc(error) {
+            // エラーコードのメッセージを定義
+            var errorMessage = {
+                0: "原因不明のエラーが発生しました…。",
+                1: "位置情報の取得が許可されませんでした…。",
+                2: "電波状況などで位置情報が取得できませんでした…。",
+                3: "位置情報の取得に時間がかかり過ぎてタイムアウトしました…。",
+            };
+                // エラーコードに合わせたエラー内容をアラート表示
+                alert(errorMessage[error.code]);
+        }
+        // オプション・オブジェクト
+        var optionObj = {
+            "enableHighAccuracy": false,
+            "timeout": 8000,
+            "maximumAge": 5000,
+        };
+        navigator.geolocation.getCurrentPosition(successFunc, errorFunc, optionObj);
+
         // GLTFファイルを読み込む 
         if (true){
             const GLTFFILE = 'gltf/test.glb';
