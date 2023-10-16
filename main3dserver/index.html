@@ -55,16 +55,34 @@
 
         // 描画開始 
         animate();
-
+        
         // GLTFファイルを読み込む 
-        const GLTFFILE = 'gltf/test.glb';
-        const gltfLoader = new GLTFLoader()
-        gltfLoader.load(GLTFFILE, (gltf) => {
-            scene.add(gltf.scene);
-        }, undefined, (error) => {
-            console.error(error);
-        });
+        if (true){
+            const GLTFFILE = 'gltf/test.glb';
+            const gltfLoader = new GLTFLoader()
+            gltfLoader.load(GLTFFILE, (gltf) => {
+                scene.add(gltf.scene);
+            }, undefined, (error) => {
+                console.error(error);
+            });
 
+        }else if(true){
+            const GLTFFILE ='gltf/scene.gltf';
+            const gltfLoader = new GLTFLoader()
+            gltfLoader.load(GLTFFILE, (gltf) => {
+                scene.add(gltf.scene);
+            }, undefined, (error) => {
+                console.error(error);
+            });
+        }else if(true){
+            const GLTFFILE ='gltf/scene.gltf';
+            const gltfLoader = new GLTFLoader()
+            gltfLoader.load(GLTFFILE, (gltf) => {
+                scene.add(gltf.scene);
+            }, undefined, (error) => {
+                console.error(error);
+            });
+        }
         // マウスイベントなどを設定 
         document.addEventListener('mousemove', onDocumentMouseMove);
         window.addEventListener('resize', onWindowResize);
@@ -79,7 +97,7 @@
             camera.position.x += (mouseX - camera.position.x) * .05;
             camera.position.y += (-mouseY - camera.position.y) * .05;
             camera.lookAt(new THREE.Vector3(0, 10, 0));
-            renderer.render(scene, camera);
+            renderer.render(scene, camera); 
         }
 
         // リサイズ時のカメラ調整 
