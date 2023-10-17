@@ -55,7 +55,68 @@
 
         // 描画開始 
         animate();
-        
+        //javascriptでGPSを取得
+        // 現在位置を取得する
+        function successFunc(position) {
+                // 緯度をアラート表示
+                alert(position.coords.latitude);
+
+                // 経度をアラート表示
+                alert(position.coords.longitude);
+                //変数に格納
+                // 取得したデータの整理
+                var data = position.coords;
+                // データの整理
+                var lat = data.latitude;
+                var lng = data.longitude;
+                var alt = data.altitude;
+                var accLatlng = data.accuracy;
+                var accAlt = data.altitudeAccuracy;
+                var heading = data.heading;			//0=北,90=東,180=南,270=西
+                var speed = data.speed;
+        }
+        // 失敗した時の関数
+        function errorFunc(error) {
+            // エラーコードのメッセージを定義
+            var errorMessage = {
+                0: "原因不明のエラーが発生しました…。",
+                1: "位置情報の取得が許可されませんでした…。",
+                2: "電波状況などで位置情報が取得できませんでした…。",
+                3: "位置情報の取得に時間がかかり過ぎてタイムアウトしました…。",
+            };
+                // エラーコードに合わせたエラー内容をアラート表示
+                alert(errorMessage[error.code]);
+        }
+        // オプション・オブジェクト
+        var optionObj = {
+            "enableHighAccuracy": false,
+            "timeout": 8000,
+            "maximumAge": 5000,
+        };
+        navigator.geolocation.getCurrentPosition(successFunc, errorFunc, optionObj);
+        //位置情報を直交座標系へ変換
+        function calc_xy(phi_deg, lambda_deg, phi0_deg, lambda0_deg) {
+                // 緯度経度を平面直角座標に変換する
+                // - input:
+                //     (phi_deg, lambda_deg): 変換したい緯度・経度[度]（分・秒でなく小数であることに注意）
+                //     (phi0_deg, lambda0_deg): 平面直角座標系原点の緯度・経度[度]（分・秒でなく小数であることに注意）
+                // - output:
+                //     x: 変換後の平面直角座標[m]
+                //     y: 変換後の平面直角座標[m]
+                //
+                // 緯度経度・平面直角座標系原点をラジアンに直す
+                const phi_rad = phi_deg * Math.PI / 180;
+                const lambda_rad = lambda_deg * Math.PI / 180;
+                const phi0_rad = phi0_deg * Math.PI / 180;
+                const lambda0_rad = lambda0_deg * Math.PI / 180;
+
+                // 補助関数
+                function A_array(n) {
+                    const A0 = 1 + (n ** 2) / 4. + (n ** 4) / 64.;
+                }
+        }
+        //適宜引数に与える数を定義すること
+
         // GLTFファイルを読み込む 
         if (true){
             const GLTFFILE = 'gltf/test.glb';
@@ -67,7 +128,7 @@
             });
 
         }else if(true){
-            const GLTFFILE ='gltf/scene.gltf';
+            const GLTFFILE ='gltf/test.gltf';
             const gltfLoader = new GLTFLoader()
             gltfLoader.load(GLTFFILE, (gltf) => {
                 scene.add(gltf.scene);
@@ -75,7 +136,7 @@
                 console.error(error);
             });
         }else if(true){
-            const GLTFFILE ='gltf/scene.gltf';
+            const GLTFFILE ='gltf/test.gltf';
             const gltfLoader = new GLTFLoader()
             gltfLoader.load(GLTFFILE, (gltf) => {
                 scene.add(gltf.scene);
