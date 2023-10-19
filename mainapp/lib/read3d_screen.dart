@@ -1,37 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:model_viewer_plus/model_viewer_plus.dart';
 
 //これはもしかしたらWindowsサ終案件かもしれん　対応が公式サイトによるとAndroidとiOSとwebだけだから
 //3dモデルを表示する画面
 // ignore: camel_case_types
-class web3DviewPage extends StatelessWidget {
+class web3DviewPage extends StatefulWidget {
   const web3DviewPage({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          title: const Text('Clocky3dVieweraaaaa'),
-        ),
-        body: const ModelViewer(
-          //assetsでも可能
-          src: 'https://modelviewer.dev/shared-assets/models/NeilArmstrong.glb',
-          autoRotate: true,
-          cameraControls: true,
-        ));
-  }
-}
-
-void main() {
-  runApp(MyApp());
-}
-
-class MyApp extends StatefulWidget {
-  @override
+  // ignore: library_private_types_in_public_api
   _MyAppState createState() => _MyAppState();
 }
 
-class _MyAppState extends State<MyApp> {
+class _MyAppState extends State<web3DviewPage> {
   bool switch1 = false;
   bool switch2 = false;
   bool switch3 = false;
