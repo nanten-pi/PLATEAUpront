@@ -1,4 +1,15 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
+import 'package:mainapp/read2d_screen.dart';
+import 'package:mainapp/write_screen.dart';
+import 'package:mainapp/main_screen.dart';
+
+final jmaurl = Uri.parse('https://www.jma.go.jp/jma/index.html');
+final mapurl = Uri.parse('https://www.google.com/maps');
+final jrurl = Uri.parse('https://www.westjr.co.jp/');
+final localgovernmenturl =
+    Uri.parse('https://www.city.higashihiroshima.lg.jp/index.html');
 
 //これはもしかしたらWindowsサ終案件かもしれん　対応が公式サイトによるとAndroidとiOSとwebだけだから
 //3dモデルを表示する画面
@@ -12,56 +23,94 @@ class web3DviewPage extends StatefulWidget {
 }
 
 class _MyAppState extends State<web3DviewPage> {
-  bool switch1 = false;
-  bool switch2 = false;
-  bool switch3 = false;
-
+  final dio = Dio();
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          actions: <Widget>[
-            PopupMenuButton<String>(
-              onSelected: (String result) {},
-              itemBuilder: (BuildContext context) => <PopupMenuEntry<String>>[
-                PopupMenuItem<String>(
-                  value: 'Switch 1',
-                  child: SwitchListTile(
-                    title: const Text('Switch 1'),
-                    value: switch1,
-                    onChanged: (bool value) {
-                      setState(() {
-                        switch1 = value;
-                      });
-                    },
-                  ),
-                ),
-                PopupMenuItem<String>(
-                  value: 'Switch 2',
-                  child: SwitchListTile(
-                    title: const Text('Switch 2'),
-                    value: switch2,
-                    onChanged: (bool value) {
-                      setState(() {
-                        switch2 = value;
-                      });
-                    },
-                  ),
-                ),
-                PopupMenuItem<String>(
-                  value: 'Switch 3',
-                  child: SwitchListTile(
-                    title: const Text('Switch 3'),
-                    value: switch3,
-                    onChanged: (bool value) {
-                      setState(() {
-                        switch3 = value;
-                      });
-                    },
-                  ),
-                ),
-              ],
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Clocky'),
+        actions: [],
+      ),
+      drawer: Drawer(
+        // ハンバーガーコンテンツ(とても効率的である既存の資材の流用)
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: <Widget>[
+            const DrawerHeader(
+              decoration: BoxDecoration(
+                color: Color.fromARGB(255, 14, 196, 120),
+              ),
+              child: Text('Clocky あくまで試験です'),
+            ),
+            ListTile(
+              title: const Text('電波強度(の表示切替?)'),
+              onTap: () {
+                // メニュー1のアクション
+                launchUrl(jmaurl);
+              },
+            ),
+            ListTile(
+              title: const Text('地震震度(の表示切替?)'),
+              onTap: () {
+                // メニュー2のアクション
+                launchUrl(jrurl);
+              },
+            ),
+            ListTile(
+              title: const Text('雨雲範囲(の表示切替?)'),
+              onTap: () {
+                // メニュー3のアクション
+                launchUrl(localgovernmenturl);
+              },
+            ),
+            ListTile(
+              title: const Text('初期ページへ戻る'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const MainScreen()),
+                );
+              },
+            ),
+            ListTile(
+              title: const Text('閉じる'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+          ],
+        ),
+      ),
+      //コ↑コ↓からパクリ
+      bottomNavigationBar: BottomAppBar(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            IconButton(
+              icon: const Icon(Icons.map),
+              onPressed: () {
+                // 下のボタン１号クン(見た目のみの無意味なボタン)
+              },
+            ),
+            IconButton(
+              icon: const Icon(Icons.article),
+              onPressed: () {
+                //　下のボタン２号クン
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const MapPage()),
+                );
+              },
+            ),
+            IconButton(
+              icon: const Icon(Icons.layers),
+              onPressed: () {
+                // 下のボタン３号クン
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const writeingPage()),
+                );
+              },
             ),
           ],
         ),
