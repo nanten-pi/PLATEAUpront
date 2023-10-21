@@ -116,9 +116,9 @@
                 }
         }
         //適宜引数に与える数を定義すること
-
+        var random = Math.floor(Math.random() * 11);
         // GLTFファイルを読み込む 
-        if (true){
+        if (random==1){
             const GLTFFILE = 'gltf/test2.glb';
             const gltfLoader = new GLTFLoader()
             gltfLoader.load(GLTFFILE, (gltf) => {
@@ -127,7 +127,7 @@
                 console.error(error);
             });
 
-        }else if(1!=1){
+        }else if(random==2){
             const GLTFFILE ='gltf/test.glb';
             const gltfLoader = new GLTFLoader()
             gltfLoader.load(GLTFFILE, (gltf) => {
@@ -135,7 +135,7 @@
             }, undefined, (error) => {
                 console.error(error);
             });
-        }else if(1 != 1){
+        }else if(random==3){
             const GLTFFILE ='gltf/test.glb';
             const gltfLoader = new GLTFLoader()
             gltfLoader.load(GLTFFILE, (gltf) => {
