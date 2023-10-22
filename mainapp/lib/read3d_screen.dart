@@ -119,44 +119,36 @@ class _MyAppState extends State<web3DviewPage> {
           ],
         ),
       ),
-      body: Column(
-        children: [
-          IconButton(
-            icon: Icon(Icons.arrow_left),
-            tooltip: 'back',
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const MainScreen()),
-              );
-            },
-          ),
-          ElevatedButton(
-            child: const Text('雨雲表示切替'),
-            
-            style: ElevatedButton.styleFrom(
-              primary: const Color.fromARGB(255, 255, 255, 255),
-              onPrimary: Color.fromARGB(255, 0, 92, 61),
+      body: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: <Widget>[
+            const DrawerHeader(
+              decoration: BoxDecoration(
+                color: Color.fromARGB(172, 14, 196, 120),
+              ),
+              child: Text('マップの表示オブジェクトの切り替え'),
             ),
-            onPressed: () {}, //切り替え軍団切り替え方は知らんボタンだけ
-          ),
-          ElevatedButton(
-            child: const Text('電波表示切替'),
-            style: ElevatedButton.styleFrom(
-              primary: const Color.fromARGB(255, 255, 255, 255),
-              onPrimary: Color.fromARGB(255, 0, 92, 61),
+            ListTile(
+              title: const Text('雨雲表示切替'),
+              onTap: () {},
             ),
-            onPressed: () {},
-          ),
-          ElevatedButton(
-            child: const Text('地震表示切替'),
-            style: ElevatedButton.styleFrom(
-              primary: const Color.fromARGB(255, 255, 255, 255),
-              onPrimary: Color.fromARGB(255, 0, 92, 61),
+            ListTile(
+              title: const Text('電波表示切替'),
+              onTap: () {},
             ),
-            onPressed: () {},
-          ),
-        ],
+            ListTile(
+              title: const Text('地震表示切替'),
+              onTap: () {},
+            ),
+            ListTile(
+              title: const Text('閉じる'),
+              onTap: () {
+                Navigator.pop(context);
+              },
+            ),
+          ],
+        ),
       ),
     );
   }
