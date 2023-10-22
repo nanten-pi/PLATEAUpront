@@ -4,6 +4,7 @@ import 'package:url_launcher/url_launcher.dart';
 import 'package:mainapp/read2d_screen.dart';
 import 'package:mainapp/write_screen.dart';
 import 'package:mainapp/main_screen.dart';
+import 'package:webview_flutter/webview_flutter.dart';
 
 final jmaurl = Uri.parse('https://www.jma.go.jp/jma/index.html');
 final mapurl = Uri.parse('https://www.google.com/maps');

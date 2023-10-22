@@ -174,3 +174,12 @@ html中のjsでのGPS取得
 jsで縦横取得>関連性のある値を抽出>メッシュ番号へ変換>3dモデルのファイルを指定>表示 
 https://qiita.com/sw1227/items/e7a590994ad7dcd0e8ab
 https://sw1227.hatenablog.com/entry/2018/11/30/200702
+
+https://zenn.dev/yuichkun/articles/771904f0f0452f
+えっと>>>これはどういうことかね?
+https://ics.media/tutorial-three/camera_orbitcontrols/
+できな語ったときのため
+https://www.jyuko49.com/entry/2020/07/24/135155
+これはどういうことだああああああああああ
+https://modelviewer.dev/
+けっきょくここにもどる
