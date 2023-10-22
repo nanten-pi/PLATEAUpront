@@ -35,7 +35,7 @@
         scene.add(pointLight);
 
         // 1km四方の地面を追加 
-        const geometry = new THREE.PlaneGeometry(1000, 1000);
+        const geometry = new THREE.PlaneGeometry(10000, 10000);
         const material = new THREE.MeshBasicMaterial(
             { color: 0x666666, side: THREE.DoubleSide });
         const plane = new THREE.Mesh(geometry, material);
@@ -118,7 +118,7 @@
         //適宜引数に与える数を定義すること
         var random = Math.floor(Math.random() * 11);
         // GLTFファイルを読み込む 
-        if (random==1){
+        if (false){
             const GLTFFILE = 'gltf/test2.glb';
             const gltfLoader = new GLTFLoader()
             gltfLoader.load(GLTFFILE, (gltf) => {
@@ -127,15 +127,15 @@
                 console.error(error);
             });
 
-        }else if(random==2){
-            const GLTFFILE ='gltf/test.glb';
+        }else if(true){
+            const GLTFFILE ='gltf/saisyuu5-6.glb';
             const gltfLoader = new GLTFLoader()
             gltfLoader.load(GLTFFILE, (gltf) => {
                 scene.add(gltf.scene);
             }, undefined, (error) => {
                 console.error(error);
             });
-        }else if(random==3){
+        }else if(false){
             const GLTFFILE ='gltf/test.glb';
             const gltfLoader = new GLTFLoader()
             gltfLoader.load(GLTFFILE, (gltf) => {
