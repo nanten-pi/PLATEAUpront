@@ -4,12 +4,26 @@
         <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
     </head>
     <body>
-        <model-viewer alt="cat" src="gltf/saisyuu5-5.glb" camera-controls></model-viewer>
         <style>
             model-viewer {
                 width: 100%;
+                height: 1200px;
             }
         </style>
+        <model-viewer
+         src="gltf/saisyuu5-5.glb" 
+         camera-controls 
+         camera-target="0m 1.2m 0m" 
+         camera-orbit="90deg 90deg 50%"
+        >
+        </model-viewer>
+        <button id="above-button">View from above</button>
     </body>
+    <script>
+        document.querySelector('#above-button').addEventListener('click', (event) => {
+            const modelViewer = document.querySelector("model-viewer");
+            modelViewer.setAttribute('camera-orbit', "0deg 0deg 50%");
+        });
+    </script>
 
 </html>
