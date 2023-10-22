@@ -29,7 +29,6 @@ class _MyAppState extends State<web3DviewPage> {
     return Scaffold(
       appBar: AppBar(
         title: const Text('Clocky'),
-        actions: [],
       ),
       drawer: Drawer(
         // ハンバーガーコンテンツ(とても効率的である既存の資材の流用)
@@ -43,33 +42,38 @@ class _MyAppState extends State<web3DviewPage> {
               child: Text('Clocky あくまで試験です'),
             ),
             ListTile(
-              title: const Text('電波強度(の表示切替?)'),
+              title: const Text('気象情報'),
               onTap: () {
-                // メニュー1のアクション
-                launchUrl(jmaurl);
+                // メニュー1のアクションを追加
+                launchUrl(jmaurl); // メニューを閉じる
               },
             ),
             ListTile(
-              title: const Text('地震震度(の表示切替?)'),
+              title: const Text('公共交通機関の情報'),
               onTap: () {
-                // メニュー2のアクション
-                launchUrl(jrurl);
+                // メニュー2のアクションを追加
+                launchUrl(jrurl); // ちなみにjrwest
               },
             ),
             ListTile(
-              title: const Text('雨雲範囲(の表示切替?)'),
+              title: const Text('自治体の発表'),
               onTap: () {
-                // メニュー3のアクション
-                launchUrl(localgovernmenturl);
+                // メニュー3のアクションを追加
+                launchUrl(localgovernmenturl); //東広島市
               },
             ),
             ListTile(
-              title: const Text('初期ページへ戻る'),
+              title: const Text('地図'),
               onTap: () {
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const MainScreen()),
-                );
+                // メニュー4のアクションを追加
+                launchUrl(mapurl); // googlemap
+              },
+            ),
+            ListTile(
+              title: const Text('通信環境'),
+              onTap: () {
+                // メニュー5のアクションを追加
+                launchUrl(frequrl); // 通信速度
               },
             ),
             ListTile(
@@ -114,6 +118,45 @@ class _MyAppState extends State<web3DviewPage> {
             ),
           ],
         ),
+      ),
+      body: Column(
+        children: [
+          IconButton(
+            icon: Icon(Icons.arrow_left),
+            tooltip: 'back',
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const MainScreen()),
+              );
+            },
+          ),
+          ElevatedButton(
+            child: const Text('雨雲表示切替'),
+            
+            style: ElevatedButton.styleFrom(
+              primary: const Color.fromARGB(255, 255, 255, 255),
+              onPrimary: Color.fromARGB(255, 0, 92, 61),
+            ),
+            onPressed: () {}, //切り替え軍団切り替え方は知らんボタンだけ
+          ),
+          ElevatedButton(
+            child: const Text('電波表示切替'),
+            style: ElevatedButton.styleFrom(
+              primary: const Color.fromARGB(255, 255, 255, 255),
+              onPrimary: Color.fromARGB(255, 0, 92, 61),
+            ),
+            onPressed: () {},
+          ),
+          ElevatedButton(
+            child: const Text('地震表示切替'),
+            style: ElevatedButton.styleFrom(
+              primary: const Color.fromARGB(255, 255, 255, 255),
+              onPrimary: Color.fromARGB(255, 0, 92, 61),
+            ),
+            onPressed: () {},
+          ),
+        ],
       ),
     );
   }
