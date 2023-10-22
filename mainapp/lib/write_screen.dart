@@ -10,7 +10,7 @@ class writeingPage extends StatelessWidget {
         controller: WebViewController()
           ..setJavaScriptMode(JavaScriptMode.unrestricted)
           //この辺もちゃんとドメイン周り設定しないといけない
-          ..loadRequest(Uri.parse("http://localhost:8080/")),
+          ..loadRequest(Uri.parse("https://www.hcyuko.hiroshima-c.ed.jp/")),
       ),
     );
   }
