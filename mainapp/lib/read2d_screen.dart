@@ -9,7 +9,7 @@ class MapPage extends StatelessWidget {
       body: WebViewWidget(
         controller: WebViewController()
           ..setJavaScriptMode(JavaScriptMode.unrestricted)
-          ..loadRequest(Uri.parse("http://hot.ssnetwork.io:46931/")),
+          ..loadRequest(Uri.parse("http://hot.ssnetwork.io:46931")),
       ),
     );
   }
