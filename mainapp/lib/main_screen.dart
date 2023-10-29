@@ -33,7 +33,7 @@ class _MainScreenState extends State<MainScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Clocky'),
+        title: const Text('SHISAKU'),
         actions: [
           IconButton(
             icon: const Icon(Icons.settings), // ハンバーガーメニュー君な筈。できてるかは知らん
@@ -56,7 +56,7 @@ class _MainScreenState extends State<MainScreen> {
               decoration: BoxDecoration(
                 color: Color.fromARGB(255, 14, 196, 120),
               ),
-              child: Text('Clocky あくまで試験です'),
+              child: Text('試験です'),
             ),
             ListTile(
               title: const Text('気象情報'),

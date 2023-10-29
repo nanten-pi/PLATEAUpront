@@ -29,7 +29,7 @@ class _MyAppState extends State<web3DviewPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Clocky'),
+        title: const Text('SHISAKU'),
       ),
       drawer: Drawer(
         // ハンバーガーコンテンツ(とても効率的である既存の資材の流用)
@@ -40,7 +40,7 @@ class _MyAppState extends State<web3DviewPage> {
               decoration: BoxDecoration(
                 color: Color.fromARGB(255, 14, 196, 120),
               ),
-              child: Text('Clocky あくまで試験です'),
+              child: Text('試験版です'),
             ),
             ListTile(
               title: const Text('気象情報'),
