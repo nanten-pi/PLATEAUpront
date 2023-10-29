@@ -2,7 +2,7 @@ const express = require("express");
 //インスタンスの作成
 const app = express();
 //JSONの作成
-let messageJson = {"message": "Hello World!",};
+let messageJson = {"message": "dangers",};
 //JSONを送信(ファイル実行時のみ)
 app.use(express.json());
 //「ドメイン/message」というURLに一致していた場合res(返信）としてmessageJsonという変数を返す
