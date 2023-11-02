@@ -32,7 +32,7 @@ class _MyAppState extends State<web3DviewPage> {
       body: WebViewWidget(
         controller: WebViewController()
           ..setJavaScriptMode(JavaScriptMode.unrestricted)
-          ..loadRequest(Uri.parse("http://hot.ssnetwork.io:46931")),
+          ..loadRequest(Uri.parse("https://www.hcyuko.hiroshima-c.ed.jp/")),
       ),
       appBar: AppBar(
         title: const Text('SHISAKU'),
