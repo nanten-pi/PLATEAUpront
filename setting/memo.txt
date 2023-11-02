@@ -188,3 +188,4 @@ https://mawasu-blog.com/modelviewer_play_animation/
 アニメーション???
 
 //gpsから割り出したテキストをjsonキーに設定してそれに会うデータを送信する
+//設計練り直し

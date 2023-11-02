@@ -7,10 +7,10 @@ let statusJson={"GPS":"dang"};
 //JSONを送信(ファイル実行時のみ)
 app.use(express.json());
 //「ドメイン/message」というURLに一致していた場合res(返信）としてmessageJsonという変数を返す
-app.get("/message", (req, res) => {
+app.get("/post", (req, res) => {
     res.send(messageJson);
 });
-app.get("/GPS", (req, res) => {
+app.get("/get", (req, res) => {
     res.send(statusJson);
 });
 //ポート番号からの情報を確認(8000番ポートで起動)
