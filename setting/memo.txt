@@ -186,3 +186,5 @@ https://modelviewer.dev/
 https://www.sejuku.net/blog/22432
 https://mawasu-blog.com/modelviewer_play_animation/
 アニメーション???
+
+//gpsから割り出したテキストをjsonキーに設定してそれに会うデータを送信する

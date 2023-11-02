@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+
 import 'package:mainapp/read2d_screen.dart';
 import 'package:mainapp/read3d_screen.dart';
 import 'package:mainapp/setting.dart';
@@ -14,8 +15,7 @@ import 'package:url_launcher/url_launcher.dart';
 final jmaurl = Uri.parse('https://www.jma.go.jp/jma/index.html');
 final mapurl = Uri.parse('https://www.google.com/maps');
 final jrurl = Uri.parse('https://www.westjr.co.jp/');
-final localgovernmenturl =
-    Uri.parse('https://www.city.higashihiroshima.lg.jp/index.html');
+final localgovernmenturl = Uri.parse('https://www.city.hiroshima.lg.jp/');
 final frequrl = Uri.parse('https://fast.com/ja/');
 
 //main.dartによって呼ばれるMainScreenクラス
@@ -119,6 +119,7 @@ class _MainScreenState extends State<MainScreen> {
                 );
               },
             ),
+            //閲覧（json)
             IconButton(
               icon: const Icon(Icons.article),
               onPressed: () {
@@ -130,7 +131,7 @@ class _MainScreenState extends State<MainScreen> {
               },
             ),
             IconButton(
-              icon: const Icon(Icons.layers),
+              icon: const Icon(Icons.edit),
               onPressed: () {
                 // 下のボタン３号クン
                 Navigator.push(
@@ -154,7 +155,7 @@ class _MainScreenState extends State<MainScreen> {
                 viewModel.retrieveMessage();
               },
               //ボタンの中身（ウィジェット)
-              child: const Text("get data"),
+              child: const Text("get data(現在使用不可)"),
             ),
           ),
           //ここでExampleAppクラスを呼び出している
