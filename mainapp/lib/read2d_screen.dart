@@ -1,7 +1,6 @@
 import 'dart:convert';
 //まんなか
 import 'package:flutter/material.dart';
-import 'package:webview_flutter/webview_flutter.dart';
 import 'package:http/http.dart' as http;
 
 class WeatherModel {
@@ -26,15 +25,11 @@ class WeatherModel {
 }
 
 Future<WeatherModel?> get() async {
-  const lat = '35.65138';
-  const lon = '139.63670';
-  const key = 'aa50ce0598c22de20f75cf3ea31ac312';
+  //8000番でlistenもpostもする。
+  const domain = 'cool.ssnetwork.io:41700';
+  const pass = '/get';
 
-  const domain = 'https://api.openweathermap.org';
-  const pass = '/data/2.5/onecall';
-  const query = '?lat=$lat&lon=$lon&exclude=daily&lang=ja&appid=$key';
-
-  var url = Uri.parse(domain + pass + query);
+  var url = Uri.parse(domain + pass);
   debugPrint('url: $url');
 
   var response = await http.get(url);
@@ -61,7 +56,10 @@ class MapPage extends StatelessWidget {
             var data = snapshot.data;
 
             return Scaffold(
-                body: Center(child: Text('現在の天気は${data?.description}です！')));
+                body: Center(
+                    //つもり教育
+                    child:
+                        Text('現在の最新の情報は${data?.description}がこの近くで投稿されました。')));
           } else {
             return const Scaffold(body: Center(child: Text('処理中...')));
           }
