@@ -1,12 +1,14 @@
 // ignore_for_file: camel_case_types, prefer_const_constructors, sized_box_for_whitespace, prefer_const_literals_to_create_immutables
 //ペン
+import 'dart:convert';
 import 'dart:math';
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
 
 //GPSのデータのふり
-int intRand = Random().nextInt(11);
+int intRand = Random().nextInt(1);
 //先に変数だけ宣言できねえのか???　よくわからん
 String titles = 'hello world';
 String naiyou = 'helllo world';
@@ -37,9 +39,38 @@ class writeingPage extends StatelessWidget {
             },
           ),
           OutlinedButton(
-            onPressed: () {
+            onPressed: () async {
               print(titles);
               print(naiyou);
+              // headersの作成
+              final headers = {
+                'Content-type': 'application/json; charset=UTF-8'
+              };
+
+              // bodyの作成
+              final body = {
+                //何かデータ入れ込めるかもね
+                "current": {
+                  // 'weather'のデータを格納する
+                  "main": [
+                    {
+                      "id": 803,
+                      "titles": "hello",
+                      "payload": "see you",
+                      "gps": "1"
+                    }
+                  ]
+                }
+              };
+              body['titles'] = titles as Map<String, List<Map<String, Object>>>;
+              body['payload'] =
+                  naiyou as Map<String, List<Map<String, Object>>>;
+              // urlの作成
+              final url = Uri.https("http://cool.ssnetwork.io:41700", "/post");
+
+              // POSTリクエストの作成
+              final response = await http.post(url,
+                  headers: headers, body: jsonEncode(body));
             },
             child: Text('送信'),
           )
