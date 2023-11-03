@@ -14,7 +14,7 @@ let testJson={
             {
                 "id":803,
                 "titles":"hogehoge",
-                "payload":"hogehoge",
+                "payload":"とある土砂崩れ",
                 "gps":"1"
             }
         ]
@@ -24,13 +24,13 @@ let testJson={
 //JSONを送信(ファイル実行時のみ)
 app.use(express.json());
 //「ドメイン/message」というURLに一致していた場合res(返信）としてmessageJsonという変数を返す
-app.get("/post", (req, res) => {
-    res.send(messageJson);
-});
 app.get("/get", (req, res) => {
     res.status(200).send(testJson);
 });
 //ポート番号からの情報を確認(8000番ポートで起動)
 app.listen(8000, () => {
     console.log("running server");
+    app.post("/",function(req, res){
+    console.log(req.body);
+    });
 });
