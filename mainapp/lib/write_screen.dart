@@ -7,6 +7,12 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
+import 'package:mainapp/read2d_screen.dart';
+import 'package:mainapp/read3d_screen.dart';
+import 'package:mainapp/setting.dart';
+import 'package:mainapp/viewmodel.dart';
+import 'package:mainapp/write_screen.dart';
+
 //GPSのデータのふり
 int intRand = Random().nextInt(1);
 //先に変数だけ宣言できねえのか???　よくわからん
@@ -75,6 +81,39 @@ class writeingPage extends StatelessWidget {
             child: Text('送信'),
           )
         ]),
+      ),
+      bottomNavigationBar: BottomAppBar(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            IconButton(
+              icon: const Icon(Icons.map),
+              onPressed: () {
+                // 下のボタン１号クン(見た目のみの無意味なボタン)
+              },
+            ),
+            IconButton(
+              icon: const Icon(Icons.article),
+              onPressed: () {
+                //　下のボタン２号クン
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const MapPage()),
+                );
+              },
+            ),
+            IconButton(
+              icon: const Icon(Icons.layers),
+              onPressed: () {
+                // 下のボタン３号クン
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const writeingPage()),
+                );
+              },
+            ),
+          ],
+        ),
       ),
     );
   }

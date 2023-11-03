@@ -4,6 +4,10 @@ import 'dart:convert';
 //まんなか
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:mainapp/read2d_screen.dart';
+import 'package:mainapp/write_screen.dart';
+import 'package:mainapp/main_screen.dart';
+import 'package:mainapp/read3d_screen.dart';
 
 class resModel {
   final String titles; //titles
