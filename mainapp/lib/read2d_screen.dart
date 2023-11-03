@@ -6,20 +6,18 @@ import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
 class resModel {
-  final String main;
-  final String description;
-  final String icon;
+  final String titles; //titles
+  final String payload; //payload
+  final String gps; //gps_code
 
-  resModel({required this.main, required this.description, required this.icon});
+  resModel({required this.titles, required this.payload, required this.gps});
 
   factory resModel.fromJson(Map<String, dynamic> json) {
-    var weather = json['weather'];
+    var weather = json['main'];
     var data = weather[0];
 
     var model = resModel(
-        main: data['main'],
-        description: data['description'],
-        icon: data['icon']);
+        titles: data['titles'], payload: data['payload'], gps: data['gps']);
 
     return model;
   }
@@ -27,7 +25,7 @@ class resModel {
 
 Future<resModel?> get() async {
   //8000番でlistenもpostもする。
-  const domain = 'cool.ssnetwork.io:41700';
+  const domain = 'http://cool.ssnetwork.io:41700';
   const pass = '/get';
 
   var url = Uri.parse(domain + pass);
@@ -59,8 +57,7 @@ class MapPage extends StatelessWidget {
             return Scaffold(
                 body: Center(
                     //つもり教育
-                    child:
-                        Text('現在の最新の情報は${data?.description}がこの近くで投稿されました。')));
+                    child: Text('現在の最新の情報は${data?.payload}がこの近くで投稿されました。')));
           } else {
             return const Scaffold(body: Center(child: Text('処理中...')));
           }
