@@ -1,21 +1,22 @@
+// ignore_for_file: camel_case_types
+
 import 'dart:convert';
 //まんなか
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 
-class WeatherModel {
+class resModel {
   final String main;
   final String description;
   final String icon;
 
-  WeatherModel(
-      {required this.main, required this.description, required this.icon});
+  resModel({required this.main, required this.description, required this.icon});
 
-  factory WeatherModel.fromJson(Map<String, dynamic> json) {
+  factory resModel.fromJson(Map<String, dynamic> json) {
     var weather = json['weather'];
     var data = weather[0];
 
-    var model = WeatherModel(
+    var model = resModel(
         main: data['main'],
         description: data['description'],
         icon: data['icon']);
@@ -24,7 +25,7 @@ class WeatherModel {
   }
 }
 
-Future<WeatherModel?> get() async {
+Future<resModel?> get() async {
   //8000番でlistenもpostもする。
   const domain = 'cool.ssnetwork.io:41700';
   const pass = '/get';
@@ -38,7 +39,7 @@ Future<WeatherModel?> get() async {
     var body = response.body;
     var decodeData = jsonDecode(body);
     var json = decodeData['current'];
-    var model = WeatherModel.fromJson(json);
+    var model = resModel.fromJson(json);
 
     return model;
   }
@@ -51,7 +52,7 @@ class MapPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return FutureBuilder(
         future: get(),
-        builder: (BuildContext context, AsyncSnapshot<WeatherModel?> snapshot) {
+        builder: (BuildContext context, AsyncSnapshot<resModel?> snapshot) {
           if (snapshot.hasData) {
             var data = snapshot.data;
 

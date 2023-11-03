@@ -6,7 +6,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 
 //GPSのデータのふり
-int intRand = Random().nextInt(101);
+int intRand = Random().nextInt(11);
 //先に変数だけ宣言できねえのか???　よくわからん
 String titles = 'hello world';
 String naiyou = 'helllo world';
