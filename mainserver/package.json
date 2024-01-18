@@ -8,7 +8,7 @@
     "start": "node server.js"
   },
   "keywords": [],
-  "author": "Hiroshima Prefactual High School computer club ©2023 Sena Hiyama Hironori Kohisa  Rei Iwashiro",
+  "author": "Hiroshima Prefectural High School computer club ©2023 Sena Hiyama Hironori Kohisa  Rei Iwashiro",
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.2",
