@@ -10,7 +10,6 @@ import 'package:http/http.dart' as http;
 import 'package:mainapp/read2d_screen.dart';
 import 'package:mainapp/read3d_screen.dart';
 import 'package:mainapp/setting.dart';
-import 'package:mainapp/viewmodel.dart';
 import 'package:mainapp/write_screen.dart';
 
 //GPSのデータのふり

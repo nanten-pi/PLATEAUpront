@@ -5,7 +5,6 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:mainapp/read2d_screen.dart';
 import 'package:mainapp/read3d_screen.dart';
 import 'package:mainapp/setting.dart';
-import 'package:mainapp/viewmodel.dart';
 import 'package:mainapp/write_screen.dart';
 
 //url_launcher
@@ -149,17 +148,13 @@ class _MainScreenState extends State<MainScreen> {
             //ボタンを定義
             builder: (context, ref, builder) => ElevatedButton(
               //押された検知
-              onPressed: () {
-                final viewModel = ref.read(viewModelProvider.notifier);
-                //viewmodel.dartのretrieveMessageを呼び出している
-                viewModel.retrieveMessage();
-              },
+              onPressed: () {},
               //ボタンの中身（ウィジェット)
               child: const Text("get data(現在使用不可)"),
             ),
           ),
           //ここでExampleAppクラスを呼び出している
-          const ExampleApp(),
+          //const ExampleApp(),
         ],
       ),
     );
@@ -167,6 +162,7 @@ class _MainScreenState extends State<MainScreen> {
 }
 
 //ここでExampleAppクラスを定義している
+/*
 class ExampleApp extends ConsumerWidget {
   const ExampleApp({Key? key}) : super(key: key);
 
@@ -206,6 +202,6 @@ class ExampleApp extends ConsumerWidget {
     );
   }
 }
-
+*/
 //予備役
 
