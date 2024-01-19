@@ -1,5 +1,5 @@
 name: mainapp
-description: A new Flutter project.
+description: A Flutter project for Computer Club.
 publish_to: 'none'
 version: 0.1.0
 
@@ -11,8 +11,6 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_riverpod: ^2.4.0
-  freezed: ^2.4.2
-  freezed_annotation: ^2.4.1
   http: ^1.1.0
   json_annotation: ^4.8.1
   model_viewer_plus: ^1.7.0
@@ -26,6 +24,7 @@ dev_dependencies:
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.0
+  freezed: ^2.4.2
   build_runner: ^2.4.6
   json_serializable: ^6.7.1
 

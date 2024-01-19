@@ -2,21 +2,15 @@
 //ペン
 import 'dart:convert';
 import 'dart:math';
-
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
-
 import 'package:mainapp/read2d_screen.dart';
-import 'package:mainapp/read3d_screen.dart';
-import 'package:mainapp/setting.dart';
-import 'package:mainapp/write_screen.dart';
 
 //GPSのデータのふり
 int intRand = Random().nextInt(1);
 //先に変数だけ宣言できねえのか???　よくわからん
 String titles = 'hello world';
-String naiyou = 'helllo world';
+String naiyou = 'hello world';
 
 class writeingPage extends StatelessWidget {
   const writeingPage({super.key});
@@ -45,8 +39,8 @@ class writeingPage extends StatelessWidget {
           ),
           OutlinedButton(
             onPressed: () async {
-              print(titles);
-              print(naiyou);
+              //print(titles); debug print
+              //print(naiyou);
               // headersの作成
               final headers = {
                 'Content-type': 'application/json; charset=UTF-8'

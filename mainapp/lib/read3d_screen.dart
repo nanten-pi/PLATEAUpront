@@ -1,9 +1,7 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:url_launcher/url_launcher.dart';
 import 'package:mainapp/read2d_screen.dart';
 import 'package:mainapp/write_screen.dart';
-import 'package:mainapp/main_screen.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 //いっちゃんひだり
