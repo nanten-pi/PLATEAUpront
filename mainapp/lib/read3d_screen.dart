@@ -1,6 +1,8 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
-import 'package:mainapp/read2d_screen.dart';
+import 'package:mainapp/main_screen.dart';
+import 'package:mainapp/map_screen.dart';
+import 'package:mainapp/setting.dart';
 import 'package:mainapp/write_screen.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
@@ -35,6 +37,57 @@ class _MyAppState extends State<web3DviewPage> {
       ),
       appBar: AppBar(
         title: const Text('SHISAKU'),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.settings), // ハンバーガーメニュー君な筈。できてるかは知らん
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const settingPage()),
+              );
+              // アクションとか追加できるじょー(多分)
+            },
+          ),
+        ],
+      ),
+      bottomNavigationBar: BottomAppBar(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            //deployed_code
+            IconButton(
+              icon: const Icon(Icons.home),
+              onPressed: () {
+                // 下のボタン１号クン
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const MainScreen()),
+                );
+              },
+            ),
+            //閲覧（json)
+            IconButton(
+              icon: const Icon(Icons.place),
+              onPressed: () {
+                //　下のボタン２号クン
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const MapPage()),
+                );
+              },
+            ),
+            IconButton(
+              icon: const Icon(Icons.edit),
+              onPressed: () {
+                // 下のボタン３号クン
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const writeingPage()),
+                );
+              },
+            ),
+          ],
+        ),
       ),
       drawer: Drawer(
         // ハンバーガーコンテンツ(とても効率的である既存の資材の流用)
@@ -63,40 +116,6 @@ class _MyAppState extends State<web3DviewPage> {
               title: const Text('閉じる'),
               onTap: () {
                 Navigator.pop(context);
-              },
-            ),
-          ],
-        ),
-      ),
-      //コ↑コ↓からパクリ
-      bottomNavigationBar: BottomAppBar(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            IconButton(
-              icon: const Icon(Icons.map),
-              onPressed: () {
-                // 下のボタン１号クン(見た目のみの無意味なボタン)
-              },
-            ),
-            IconButton(
-              icon: const Icon(Icons.article),
-              onPressed: () {
-                //　下のボタン２号クン
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const MapPage()),
-                );
-              },
-            ),
-            IconButton(
-              icon: const Icon(Icons.layers),
-              onPressed: () {
-                // 下のボタン３号クン
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const writeingPage()),
-                );
               },
             ),
           ],

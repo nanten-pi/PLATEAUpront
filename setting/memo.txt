@@ -186,6 +186,15 @@ https://modelviewer.dev/
 https://www.sejuku.net/blog/22432
 https://mawasu-blog.com/modelviewer_play_animation/
 アニメーション???
+https://qiita.com/taku_kw/items/520ceb40121ff4d6e93d
+pioneer
+https://zenn.dev/wakanao/articles/3820bcd67e4130
+https://zenn.dev/heyhey1028/scraps/c9ce6f3a51613c
+地図
+https://zenn.dev/flutteruniv/books/flutter-textbook/viewer/make-twitter-ui
+twitter api
+https://www.jma.go.jp/bosai/nowc/#zoom:9/lat:34.474864/lon:132.603607/colordepth:normal/elements:hrpns&slmcs&slmcs_fcst
+URL加工してAPI化
 
 //gpsから割り出したテキストをjsonキーに設定してそれに会うデータを送信する
 //設計練り直し

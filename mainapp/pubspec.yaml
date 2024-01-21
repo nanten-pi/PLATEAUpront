@@ -21,6 +21,7 @@ dependencies:
   webview_flutter: ^4.4.1
 
 dev_dependencies:
+  widgetbook: ^2.4.1
   flutter_test:
     sdk: flutter
   flutter_lints: ^2.0.0
