@@ -4,9 +4,9 @@ import 'package:mainapp/main_screen.dart';
 import 'package:mainapp/read3d_screen.dart';
 import 'package:mainapp/setting.dart';
 import 'package:mainapp/write_screen.dart';
-import 'dart:convert';
-import 'package:http/http.dart' as http;
+import 'package:webview_flutter/webview_flutter.dart';
 
+/*
 class resModel {
   final String titles; //titles
   final String payload; //payload
@@ -45,83 +45,80 @@ Future<resModel?> get() async {
   }
   return null;
 }
-
+*/
 class MapPage extends StatelessWidget {
   const MapPage({super.key});
   @override
   Widget build(BuildContext context) {
+    /*
     return FutureBuilder(
         future: get(),
         builder: (BuildContext context, AsyncSnapshot<resModel?> snapshot) {
           if (snapshot.hasData) {
             var data = snapshot.data;
-
-            return Scaffold(
-                appBar: AppBar(
-                  title: const Text('SHISAKU'),
-                  actions: [
-                    IconButton(
-                      icon:
-                          const Icon(Icons.settings), // ハンバーガーメニュー君な筈。できてるかは知らん
-                      onPressed: () {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                              builder: (context) => const settingPage()),
-                        );
-                        // アクションとか追加できるじょー(多分)
-                      },
-                    ),
-                  ],
-                ),
-                bottomNavigationBar: BottomAppBar(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.spaceAround,
-                    children: [
-                      //deployed_code
-                      IconButton(
-                        icon: const Icon(Icons.home),
-                        onPressed: () {
-                          // 下のボタン１号クン
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const MainScreen()),
-                          );
-                        },
-                      ),
-                      //閲覧（json)
-                      IconButton(
-                        icon: const Icon(Icons.edit),
-                        onPressed: () {
-                          //　下のボタン２号クン
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const writeingPage()),
-                          );
-                        },
-                      ),
-                      IconButton(
-                        icon: const Icon(Icons.view_in_ar),
-                        onPressed: () {
-                          // 下のボタン３号クン
-                          Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) => const web3DviewPage()),
-                          );
-                        },
-                      ),
-                    ],
-                  ),
-                ),
-                body: Center(
-                    //つもり教育
-                    child: Text('現在の最新の情報は${data?.payload}がこの近くで投稿されました。')));
-          } else {
-            return const Scaffold(body: Center(child: Text('処理中...')));
-          }
-        });
+      */
+    return Scaffold(
+      body: WebViewWidget(
+        controller: WebViewController()
+          ..setJavaScriptMode(JavaScriptMode.unrestricted)
+          ..loadRequest(Uri.parse(
+              "https://www.google.com/maps/d/u/0/viewer?mid=1mnkFMKBfDrceeiqA7zdvavfDUJg&hl=ja")),
+      ),
+      appBar: AppBar(
+        title: const Text('clocky'),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.settings), // ハンバーガーメニュー君な筈。できてるかは知らん
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const settingPage()),
+              );
+              // アクションとか追加できるじょー(多分)
+            },
+          ),
+        ],
+      ),
+      bottomNavigationBar: BottomAppBar(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            //deployed_code
+            IconButton(
+              icon: const Icon(Icons.home),
+              onPressed: () {
+                // 下のボタン１号クン
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const MainScreen()),
+                );
+              },
+            ),
+            //閲覧（json)
+            IconButton(
+              icon: const Icon(Icons.edit),
+              onPressed: () {
+                //　下のボタン２号クン
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const writeingPage()),
+                );
+              },
+            ),
+            IconButton(
+              icon: const Icon(Icons.view_in_ar),
+              onPressed: () {
+                // 下のボタン３号クン
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const web3DviewPage()),
+                );
+              },
+            ),
+          ],
+        ),
+      ),
+    );
   }
 }
