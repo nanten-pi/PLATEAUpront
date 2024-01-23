@@ -24,13 +24,12 @@ class writeingPage extends StatelessWidget {
         title: const Text('SHISAKU'),
         actions: [
           IconButton(
-            icon: const Icon(Icons.settings), // ハンバーガーメニュー君な筈。できてるかは知らん
+            icon: const Icon(Icons.settings),
             onPressed: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => const settingPage()),
               );
-              // アクションとか追加できるじょー(多分)
             },
           ),
         ],
@@ -43,7 +42,6 @@ class writeingPage extends StatelessWidget {
             IconButton(
               icon: const Icon(Icons.home),
               onPressed: () {
-                // 下のボタン１号クン
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => const MainScreen()),
@@ -54,7 +52,6 @@ class writeingPage extends StatelessWidget {
             IconButton(
               icon: const Icon(Icons.view_in_ar),
               onPressed: () {
-                //　下のボタン２号クン
                 Navigator.push(
                   context,
                   MaterialPageRoute(
@@ -65,7 +62,6 @@ class writeingPage extends StatelessWidget {
             IconButton(
               icon: const Icon(Icons.place),
               onPressed: () {
-                // 下のボタン３号クン
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => const MapPage()),
