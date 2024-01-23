@@ -1,9 +1,12 @@
 // ignore_for_file: camel_case_types
 import 'package:flutter/material.dart';
 import 'package:mainapp/main_screen.dart';
+import 'package:mainapp/map_screen_aleart.dart';
+import 'package:mainapp/map_screen_weather.dart';
 import 'package:mainapp/read3d_screen.dart';
 import 'package:mainapp/setting.dart';
 import 'package:mainapp/write_screen.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 /*
@@ -78,6 +81,61 @@ class MapPage extends StatelessWidget {
             },
           ),
         ],
+      ),
+      drawer: Drawer(
+        // ハンバーガーメニューのコンテンツ
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: <Widget>[
+            const DrawerHeader(
+              decoration: BoxDecoration(
+                color: Color.fromARGB(255, 14, 196, 120),
+              ),
+              child: Text('alpha_0.0.1'),
+            ),
+            ListTile(
+              title: const Text('最初のページ'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const MapPage()),
+                ); // メニューを閉じる
+              },
+            ),
+            ListTile(
+              title: const Text('雨雲レーダー'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const MapPage_weather()),
+                );
+              },
+            ),
+            ListTile(
+              title: const Text('警報・注意報'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                      builder: (context) => const MapPage_alert()),
+                );
+              },
+            ),
+            ListTile(
+              title: const Text('通信環境'),
+              onTap: () {
+                launchUrl("https://fast.com" as Uri); // 通信速度
+              },
+            ),
+            ListTile(
+              title: const Text('閉じる'),
+              onTap: () {
+                Navigator.pop(context); // メニューを閉じる
+              },
+            ),
+          ],
+        ),
       ),
       bottomNavigationBar: BottomAppBar(
         child: Row(

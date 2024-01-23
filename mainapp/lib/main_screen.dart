@@ -28,7 +28,7 @@ class _MainScreenState extends State<MainScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('SHISAKU'),
+        title: const Text('clocky'),
         actions: [
           IconButton(
             icon: const Icon(Icons.settings), // ハンバーガーメニュー君な筈。できてるかは知らん
