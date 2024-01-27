@@ -65,19 +65,6 @@ class user_view extends StatelessWidget {
           return Scaffold(
             appBar: AppBar(
               title: const Text('SHISAKU'),
-              actions: [
-                IconButton(
-                  icon: const Icon(Icons.settings), // ハンバーガーメニュー君な筈。できてるかは知らん
-                  onPressed: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const settingPage()),
-                    );
-                    // アクションとか追加できるじょー(多分)
-                  },
-                ),
-              ],
             ),
             bottomNavigationBar: BottomAppBar(
               child: Row(

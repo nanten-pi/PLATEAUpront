@@ -39,18 +39,6 @@ class _MyAppState extends State<web3DviewPage> {
       ),
       appBar: AppBar(
         title: const Text('SHISAKU'),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.settings),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const settingPage()),
-              );
-              // アクションとか追加できるじょー(多分)
-            },
-          ),
-        ],
       ),
       drawer: Drawer(
         child: ListView(

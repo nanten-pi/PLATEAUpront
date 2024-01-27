@@ -29,18 +29,6 @@ class MapPage_alert extends StatelessWidget {
       ),
       appBar: AppBar(
         title: const Text('clocky'),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.settings), // ハンバーガーメニュー君な筈。できてるかは知らん
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const settingPage()),
-              );
-              // アクションとか追加できるじょー(多分)
-            },
-          ),
-        ],
       ),
       drawer: Drawer(
         child: ListView(
