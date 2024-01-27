@@ -1,11 +1,15 @@
+import 'dart:convert';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:mainapp/map_screen.dart';
 import 'package:mainapp/read3d_screen.dart';
 import 'package:mainapp/setting.dart';
+import 'package:mainapp/userpost.dart';
 import 'package:mainapp/write_screen.dart';
 
 //url_launcher
 import 'package:url_launcher/url_launcher.dart';
+import 'package:webview_flutter/webview_flutter.dart';
 
 //できればこのurlもjsonで変えれるようにしたい
 final jmaurl = Uri.parse('https://www.jma.go.jp/jma/index.html');
@@ -24,6 +28,25 @@ class MainScreen extends StatefulWidget {
 
 //MainScreenを継承している
 class _MainScreenState extends State<MainScreen> {
+  final controller = WebViewController();
+
+  @override
+  void initState() {
+    super.initState();
+    Future(() async {
+      final html = await rootBundle.loadString('assets/twitter.html');
+      controller
+        ..setJavaScriptMode(JavaScriptMode.unrestricted)
+        ..loadRequest(
+          Uri.dataFromString(
+            html,
+            mimeType: 'text/html',
+            encoding: Encoding.getByName('utf-8'),
+          ),
+        );
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,19 +54,17 @@ class _MainScreenState extends State<MainScreen> {
         title: const Text('clocky'),
         actions: [
           IconButton(
-            icon: const Icon(Icons.settings), // ハンバーガーメニュー君な筈。できてるかは知らん
+            icon: const Icon(Icons.settings),
             onPressed: () {
               Navigator.push(
                 context,
                 MaterialPageRoute(builder: (context) => const settingPage()),
               );
-              // アクションとか追加できるじょー(多分)
             },
           ),
         ],
       ),
       drawer: Drawer(
-        // ハンバーガーメニューのコンテンツ
         child: ListView(
           padding: EdgeInsets.zero,
           children: <Widget>[
@@ -51,18 +72,21 @@ class _MainScreenState extends State<MainScreen> {
               decoration: BoxDecoration(
                 color: Color.fromARGB(255, 14, 196, 120),
               ),
-              child: Text('alpha_0.0.1'),
+              child: Text('開発中'),
+            ),
+            ListTile(
+              title: const Text('ユーザーのポスト'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const user_view()),
+                ); // ちなみにjrwest
+              },
             ),
             ListTile(
               title: const Text('気象庁'),
               onTap: () {
                 launchUrl(jmaurl); // メニューを閉じる
-              },
-            ),
-            ListTile(
-              title: const Text('公共交通機関の情報'),
-              onTap: () {
-                launchUrl(jrurl); // ちなみにjrwest
               },
             ),
             ListTile(
@@ -94,7 +118,6 @@ class _MainScreenState extends State<MainScreen> {
             IconButton(
               icon: const Icon(Icons.place),
               onPressed: () {
-                // 下のボタン１号クン
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => const MapPage()),
@@ -105,7 +128,6 @@ class _MainScreenState extends State<MainScreen> {
             IconButton(
               icon: const Icon(Icons.edit),
               onPressed: () {
-                //　下のボタン２号クン
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => const writeingPage()),
@@ -115,7 +137,6 @@ class _MainScreenState extends State<MainScreen> {
             IconButton(
               icon: const Icon(Icons.view_in_ar),
               onPressed: () {
-                // 下のボタン３号クン
                 Navigator.push(
                   context,
                   MaterialPageRoute(
@@ -124,6 +145,11 @@ class _MainScreenState extends State<MainScreen> {
               },
             ),
           ],
+        ),
+      ),
+      body: Center(
+        child: WebViewWidget(
+          controller: controller,
         ),
       ),
     );

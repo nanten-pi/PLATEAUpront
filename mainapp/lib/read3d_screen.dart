@@ -3,7 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:mainapp/main_screen.dart';
 import 'package:mainapp/map_screen.dart';
 import 'package:mainapp/setting.dart';
+import 'package:mainapp/userpost.dart';
 import 'package:mainapp/write_screen.dart';
+import 'package:url_launcher/url_launcher.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 //いっちゃんひだり
@@ -12,8 +14,8 @@ final mapurl = Uri.parse('https://www.google.com/maps');
 final jrurl = Uri.parse('https://www.westjr.co.jp/');
 final localgovernmenturl =
     Uri.parse('https://www.city.higashihiroshima.lg.jp/index.html');
+final frequrl = Uri.parse('https://fast.com/ja/');
 
-//これはもしかしたらWindowsサ終案件かもしれん　対応が公式サイトによるとAndroidとiOSとwebだけだから
 //3dモデルを表示する画面
 // ignore: camel_case_types
 class web3DviewPage extends StatefulWidget {
@@ -39,7 +41,7 @@ class _MyAppState extends State<web3DviewPage> {
         title: const Text('SHISAKU'),
         actions: [
           IconButton(
-            icon: const Icon(Icons.settings), // ハンバーガーメニュー君な筈。できてるかは知らん
+            icon: const Icon(Icons.settings),
             onPressed: () {
               Navigator.push(
                 context,
@@ -49,6 +51,52 @@ class _MyAppState extends State<web3DviewPage> {
             },
           ),
         ],
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: <Widget>[
+            const DrawerHeader(
+              decoration: BoxDecoration(
+                color: Color.fromARGB(255, 14, 196, 120),
+              ),
+              child: Text('開発中'),
+            ),
+            ListTile(
+              title: const Text('ユーザーのポスト'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const user_view()),
+                ); // ちなみにjrwest
+              },
+            ),
+            ListTile(
+              title: const Text('気象庁'),
+              onTap: () {
+                launchUrl(jmaurl); // メニューを閉じる
+              },
+            ),
+            ListTile(
+              title: const Text('自治体の発表'),
+              onTap: () {
+                launchUrl(localgovernmenturl); //東広島市
+              },
+            ),
+            ListTile(
+              title: const Text('通信環境'),
+              onTap: () {
+                launchUrl(frequrl); // 通信速度
+              },
+            ),
+            ListTile(
+              title: const Text('閉じる'),
+              onTap: () {
+                Navigator.pop(context); // メニューを閉じる
+              },
+            ),
+          ],
+        ),
       ),
       bottomNavigationBar: BottomAppBar(
         child: Row(
@@ -89,7 +137,7 @@ class _MyAppState extends State<web3DviewPage> {
           ],
         ),
       ),
-      drawer: Drawer(
+      endDrawer: Drawer(
         // ハンバーガーコンテンツ(とても効率的である既存の資材の流用)
         child: ListView(
           padding: EdgeInsets.zero,
@@ -98,14 +146,14 @@ class _MyAppState extends State<web3DviewPage> {
               decoration: BoxDecoration(
                 color: Color.fromARGB(172, 14, 196, 120),
               ),
-              child: Text('マップの表示オブジェクトの切り替え(未実装)'),
+              child: Text('3Dモデルの表示オブジェクトの切り替え(未実装)'),
             ),
             ListTile(
-              title: const Text('雨雲表示切替'),
+              title: const Text('雨切替'),
               onTap: () {},
             ),
             ListTile(
-              title: const Text('電波表示切替'),
+              title: const Text('火山切替'),
               onTap: () {},
             ),
             ListTile(
@@ -124,7 +172,6 @@ class _MyAppState extends State<web3DviewPage> {
     );
   }
 }
-//コード整形便利すぎる
 //android error
 //ERR_CLEARTEXT_NOT_PERMITTED
 //Webpage not available

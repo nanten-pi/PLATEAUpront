@@ -3,52 +3,19 @@ import 'package:flutter/material.dart';
 import 'package:mainapp/main_screen.dart';
 import 'package:mainapp/read3d_screen.dart';
 import 'package:mainapp/setting.dart';
+import 'package:mainapp/userpost.dart';
 import 'package:mainapp/write_screen.dart';
 import 'package:url_launcher/url_launcher.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 import 'package:mainapp/map_screen.dart';
 import 'package:mainapp/map_screen_aleart.dart';
 
-/*
-class resModel {
-  final String titles; //titles
-  final String payload; //payload
-  final String gps; //gps_code
+final jmaurl = Uri.parse('https://www.jma.go.jp/jma/index.html');
+final mapurl = Uri.parse('https://www.google.com/maps');
+final jrurl = Uri.parse('https://www.westjr.co.jp/');
+final localgovernmenturl = Uri.parse('https://www.city.hiroshima.lg.jp/');
+final frequrl = Uri.parse('https://fast.com/ja/');
 
-  resModel({required this.titles, required this.payload, required this.gps});
-
-  factory resModel.fromJson(Map<String, dynamic> json) {
-    var weather = json['main'];
-    var data = weather[0];
-
-    var model = resModel(
-        titles: data['titles'], payload: data['payload'], gps: data['gps']);
-
-    return model;
-  }
-}
-
-Future<resModel?> get() async {
-  //8000番でlistenもpostもする。
-  const domain = 'http://cool.ssnetwork.io:41700';
-  const pass = '/get';
-
-  var url = Uri.parse(domain + pass);
-  debugPrint('url: $url');
-
-  var response = await http.get(url);
-
-  if (response.statusCode == 200) {
-    var body = response.body;
-    var decodeData = jsonDecode(body);
-    var json = decodeData['current'];
-    var model = resModel.fromJson(json);
-
-    return model;
-  }
-  return null;
-}
-*/
 class MapPage_weather extends StatelessWidget {
   const MapPage_weather({super.key});
   @override
@@ -83,6 +50,52 @@ class MapPage_weather extends StatelessWidget {
         ],
       ),
       drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: <Widget>[
+            const DrawerHeader(
+              decoration: BoxDecoration(
+                color: Color.fromARGB(255, 14, 196, 120),
+              ),
+              child: Text('開発中'),
+            ),
+            ListTile(
+              title: const Text('ユーザーのポスト'),
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const user_view()),
+                ); // ちなみにjrwest
+              },
+            ),
+            ListTile(
+              title: const Text('気象庁'),
+              onTap: () {
+                launchUrl(jmaurl); // メニューを閉じる
+              },
+            ),
+            ListTile(
+              title: const Text('自治体の発表'),
+              onTap: () {
+                launchUrl(localgovernmenturl); //東広島市
+              },
+            ),
+            ListTile(
+              title: const Text('通信環境'),
+              onTap: () {
+                launchUrl(frequrl); // 通信速度
+              },
+            ),
+            ListTile(
+              title: const Text('閉じる'),
+              onTap: () {
+                Navigator.pop(context); // メニューを閉じる
+              },
+            ),
+          ],
+        ),
+      ),
+      endDrawer: Drawer(
         // ハンバーガーメニューのコンテンツ
         child: ListView(
           padding: EdgeInsets.zero,

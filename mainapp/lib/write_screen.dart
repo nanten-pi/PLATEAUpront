@@ -14,6 +14,11 @@ int intRand = Random().nextInt(1);
 //先に変数だけ宣言できねえのか???　よくわからん
 String titles = 'hello world';
 String naiyou = 'hello world';
+final jmaurl = Uri.parse('https://www.jma.go.jp/jma/index.html');
+final mapurl = Uri.parse('https://www.google.com/maps');
+final jrurl = Uri.parse('https://www.westjr.co.jp/');
+final localgovernmenturl = Uri.parse('https://www.city.hiroshima.lg.jp/');
+final frequrl = Uri.parse('https://fast.com/ja/');
 
 class writeingPage extends StatelessWidget {
   const writeingPage({super.key});
@@ -116,7 +121,7 @@ class writeingPage extends StatelessWidget {
               body['payload'] =
                   naiyou as Map<String, List<Map<String, Object>>>;
               // urlの作成
-              final url = Uri.https("http://cool.ssnetwork.io:41700", "/post");
+              final url = Uri.https("http://localhost:8000/", "/post");
 
               // POSTリクエストの作成
               final response = await http.post(url,
