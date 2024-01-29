@@ -63,7 +63,7 @@ class user_view extends StatelessWidget {
           }
           return Scaffold(
             appBar: AppBar(
-              title: const Text('SHISAKU'),
+              title: const Text('clocky'),
             ),
             bottomNavigationBar: BottomAppBar(
               child: Row(
