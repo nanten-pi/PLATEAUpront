@@ -2,7 +2,6 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:mainapp/main_screen.dart';
 import 'package:mainapp/map_screen.dart';
-import 'package:mainapp/setting.dart';
 import 'package:mainapp/userpost.dart';
 import 'package:mainapp/write_screen.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -38,7 +37,7 @@ class _MyAppState extends State<web3DviewPage> {
           ..loadRequest(Uri.parse("hot.ssnetwork.io:44991")),
       ),
       appBar: AppBar(
-        title: const Text('SHISAKU'),
+        title: const Text('clocky'),
       ),
       drawer: Drawer(
         child: ListView(

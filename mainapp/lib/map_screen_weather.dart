@@ -2,7 +2,6 @@
 import 'package:flutter/material.dart';
 import 'package:mainapp/main_screen.dart';
 import 'package:mainapp/read3d_screen.dart';
-import 'package:mainapp/setting.dart';
 import 'package:mainapp/userpost.dart';
 import 'package:mainapp/write_screen.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -121,12 +120,6 @@ class MapPage_weather extends StatelessWidget {
                   MaterialPageRoute(
                       builder: (context) => const MapPage_alert()),
                 );
-              },
-            ),
-            ListTile(
-              title: const Text('通信環境'),
-              onTap: () {
-                launchUrl("https://fast.com" as Uri); // 通信速度
               },
             ),
             ListTile(

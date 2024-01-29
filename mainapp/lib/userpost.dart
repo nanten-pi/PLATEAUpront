@@ -3,7 +3,6 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:mainapp/main_screen.dart';
 import 'package:mainapp/read3d_screen.dart';
-import 'package:mainapp/setting.dart';
 import 'package:mainapp/write_screen.dart';
 import 'package:http/http.dart' as http;
 

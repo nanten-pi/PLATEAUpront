@@ -26,7 +26,7 @@ class writeingPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('SHISAKU'),
+        title: const Text('clocky'),
         actions: [
           IconButton(
             icon: const Icon(Icons.settings),
