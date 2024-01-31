@@ -96,9 +96,13 @@ class _MainScreenState extends State<MainScreen> {
               },
             ),
             ListTile(
-              title: const Text('通信環境'),
+              title: const Text('試験ページ'),
               onTap: () {
-                launchUrl(frequrl); // 通信速度
+                //launchUrl(frequrl); // 通信速度
+                /*Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const test()),
+                );*/
               },
             ),
             ListTile(
