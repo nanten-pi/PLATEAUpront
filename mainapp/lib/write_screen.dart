@@ -1,4 +1,4 @@
-// ignore_for_file: camel_case_types, prefer_const_constructors, sized_box_for_whitespace, prefer_const_literals_to_create_immutables, avoid_print
+// ignore_for_file: camel_case_types, prefer_const_constructors, sized_box_for_whitespace, prefer_const_literals_to_create_immutables, avoid_print, library_prefixes
 //ペン
 import 'dart:convert';
 import 'dart:math';
@@ -170,8 +170,7 @@ class writeingPage extends StatelessWidget {
               final url = Uri.https("http://localhost:8000/", "/post");
 
               // POSTリクエストの作成
-              final response = await http.post(url,
-                  headers: headers, body: jsonEncode(body));
+              await http.post(url, headers: headers, body: jsonEncode(body));
             },
             child: Text('送信'),
           )
