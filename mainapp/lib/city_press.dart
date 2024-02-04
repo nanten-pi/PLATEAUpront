@@ -1,68 +1,30 @@
-import 'dart:convert';
+// ignore_for_file: camel_case_types
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
-import 'package:mainapp/map_screen.dart';
+import 'package:mainapp/main_screen.dart';
 import 'package:mainapp/read3d_screen.dart';
-import 'package:mainapp/setting.dart';
 import 'package:mainapp/userpost.dart';
 import 'package:mainapp/write_screen.dart';
-import 'package:mainapp/city_press.dart';
-//url_launcher
 import 'package:url_launcher/url_launcher.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
-//できればこのurlもjsonで変えれるようにしたい
 final jmaurl = Uri.parse('https://www.jma.go.jp/jma/index.html');
 final mapurl = Uri.parse('https://www.google.com/maps');
 final jrurl = Uri.parse('https://www.westjr.co.jp/');
-final localgovernmenturl = Uri.parse('https://www.city.hiroshima.lg.jp/');
 final frequrl = Uri.parse('https://fast.com/ja/');
 
-//main.dartによって呼ばれるMainScreenクラス
-class MainScreen extends StatefulWidget {
-  const MainScreen({super.key});
-
-  @override
-  State<MainScreen> createState() => _MainScreenState();
-}
-
-//MainScreenを継承している
-class _MainScreenState extends State<MainScreen> {
-  final controller = WebViewController();
-
-  @override
-  void initState() {
-    super.initState();
-    Future(() async {
-      final html = await rootBundle.loadString('assets/twitter.html');
-      controller
-        ..setJavaScriptMode(JavaScriptMode.unrestricted)
-        ..loadRequest(
-          Uri.dataFromString(
-            html,
-            mimeType: 'text/html',
-            encoding: Encoding.getByName('utf-8'),
-          ),
-        );
-    });
-  }
-
+class city_press extends StatelessWidget {
+  const city_press({super.key});
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      body: WebViewWidget(
+        controller: WebViewController()
+          ..setJavaScriptMode(JavaScriptMode.unrestricted)
+          ..loadRequest(Uri.parse(
+              "https://www.city.higashihiroshima.lg.jp/kinkyu/33641.html")),
+      ),
       appBar: AppBar(
         title: const Text('clocky'),
-        actions: [
-          IconButton(
-            icon: const Icon(Icons.settings),
-            onPressed: () {
-              Navigator.push(
-                context,
-                MaterialPageRoute(builder: (context) => const settingPage()),
-              );
-            },
-          ),
-        ],
       ),
       drawer: Drawer(
         child: ListView(
@@ -99,13 +61,9 @@ class _MainScreenState extends State<MainScreen> {
               },
             ),
             ListTile(
-              title: const Text('試験ページ'),
+              title: const Text('通信環境'),
               onTap: () {
-                //launchUrl(frequrl); // 通信速度
-                /*Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => const test()),
-                );*/
+                launchUrl(frequrl); // 通信速度
               },
             ),
             ListTile(
@@ -123,11 +81,12 @@ class _MainScreenState extends State<MainScreen> {
           children: [
             //deployed_code
             IconButton(
-              icon: const Icon(Icons.place),
+              icon: const Icon(Icons.home),
               onPressed: () {
+                // 下のボタン１号クン
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => const MapPage()),
+                  MaterialPageRoute(builder: (context) => const MainScreen()),
                 );
               },
             ),
@@ -135,6 +94,7 @@ class _MainScreenState extends State<MainScreen> {
             IconButton(
               icon: const Icon(Icons.edit),
               onPressed: () {
+                //　下のボタン２号クン
                 Navigator.push(
                   context,
                   MaterialPageRoute(builder: (context) => const writeingPage()),
@@ -144,6 +104,7 @@ class _MainScreenState extends State<MainScreen> {
             IconButton(
               icon: const Icon(Icons.view_in_ar),
               onPressed: () {
+                // 下のボタン３号クン
                 Navigator.push(
                   context,
                   MaterialPageRoute(
@@ -154,13 +115,6 @@ class _MainScreenState extends State<MainScreen> {
           ],
         ),
       ),
-      body: Center(
-        child: WebViewWidget(
-          controller: controller,
-        ),
-      ),
     );
   }
 }
-//予備役
-

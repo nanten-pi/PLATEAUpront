@@ -18,8 +18,6 @@ Future<Position> _determinePosition() async {
   // 位置情報サービスが有効かどうかをテストします。
   serviceEnabled = await Geolocator.isLocationServiceEnabled();
   if (!serviceEnabled) {
-    // 位置情報サービスが有効でない場合、続行できません。
-    // 位置情報にアクセスし、ユーザーに対して
     // 位置情報サービスを有効にするようアプリに要請する。
     return Future.error('Location services are disabled.');
   }
@@ -40,7 +38,6 @@ Future<Position> _determinePosition() async {
         'Location permissions are permanently denied, we cannot request permissions.');
   }
 
-  // ここまでたどり着くと、位置情報に対しての権限が許可されているということなので
   // デバイスの位置情報を返す。
   final position = await Geolocator.getCurrentPosition();
   final placeMarks = await geoCoding.placemarkFromCoordinates(

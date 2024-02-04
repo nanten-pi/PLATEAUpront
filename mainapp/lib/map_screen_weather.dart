@@ -1,5 +1,6 @@
 // ignore_for_file: camel_case_types
 import 'package:flutter/material.dart';
+import 'package:mainapp/city_press.dart';
 import 'package:mainapp/main_screen.dart';
 import 'package:mainapp/read3d_screen.dart';
 import 'package:mainapp/userpost.dart';
@@ -64,7 +65,10 @@ class MapPage_weather extends StatelessWidget {
             ListTile(
               title: const Text('自治体の発表'),
               onTap: () {
-                launchUrl(localgovernmenturl); //東広島市
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const city_press()),
+                ); //東広島市
               },
             ),
             ListTile(

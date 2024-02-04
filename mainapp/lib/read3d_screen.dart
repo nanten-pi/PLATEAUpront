@@ -1,5 +1,6 @@
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
+import 'package:mainapp/city_press.dart';
 import 'package:mainapp/main_screen.dart';
 import 'package:mainapp/map_screen.dart';
 import 'package:mainapp/userpost.dart';
@@ -67,7 +68,10 @@ class _MyAppState extends State<web3DviewPage> {
             ListTile(
               title: const Text('自治体の発表'),
               onTap: () {
-                launchUrl(localgovernmenturl); //東広島市
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const city_press()),
+                ); //東広島市
               },
             ),
             ListTile(
