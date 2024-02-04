@@ -10,6 +10,7 @@ import 'package:mainapp/map_screen.dart';
 import 'package:mainapp/read3d_screen.dart';
 import 'package:mainapp/setting.dart';
 import 'package:geocoding/geocoding.dart' as geoCoding;
+import 'package:url_launcher/url_launcher.dart';
 
 Future<Position> _determinePosition() async {
   bool serviceEnabled;
@@ -120,14 +121,16 @@ class writeingPage extends StatelessWidget {
         width: double.infinity,
         child: Column(children: [
           TextField(
-            decoration: InputDecoration(hintText: 'タイトル'),
+            decoration:
+                InputDecoration(hintText: 'タイトル：日本語もしくは英語の小文字を入力してください'),
             autofocus: false,
             onChanged: (text) {
               titles = text;
             },
           ),
           TextField(
-            decoration: InputDecoration(hintText: '内容'),
+            decoration:
+                InputDecoration(hintText: '内容：同じく日本語もしくは英語の小文字を入力してください'),
             autofocus: false,
             onChanged: (text) {
               naiyou = text;
@@ -144,7 +147,11 @@ class writeingPage extends StatelessWidget {
               final headers = {
                 'Content-type': 'application/json; charset=UTF-8'
               };
-
+              //ここからセンダーを作ります
+              var urlpri =
+                  "https://script.google.com/a/macros/g.hiroshima-c.ed.jp/s/AKfycbwj_opooMHzB1sOY7ixUGoPRdlDP3ydaW327_YKD8xFqvIOh3QMwfeN1wsQc1aT68LL/exec?data=$titles$naiyou$position";
+              final gasUrl = Uri.parse(urlpri);
+              launchUrl(gasUrl);
               // bodyの作成
               final body = {
                 //何かデータ入れ込めるかもね
@@ -152,8 +159,8 @@ class writeingPage extends StatelessWidget {
                   // 'weather'のデータを格納する
                   "main": [
                     {
-                      "id": 803,
                       "titles": "hello",
+                      "id": 803,
                       "payload": "see you",
                       "gps": "1"
                     }
