@@ -128,18 +128,9 @@ class writeingPage extends StatelessWidget {
               titles = text;
             },
           ),
-          TextField(
-            decoration:
-                InputDecoration(hintText: '内容：同じく日本語もしくは英語の小文字を入力してください'),
-            autofocus: false,
-            onChanged: (text) {
-              naiyou = text;
-            },
-          ),
           OutlinedButton(
             onPressed: () async {
               print(titles); //debug print
-              print(naiyou);
               // 位置情報を取得する
               final position = await _determinePosition();
               print(position); //debug print
@@ -149,7 +140,7 @@ class writeingPage extends StatelessWidget {
               };
               //ここからセンダーを作ります
               var urlpri =
-                  "https://script.google.com/a/macros/g.hiroshima-c.ed.jp/s/AKfycbwj_opooMHzB1sOY7ixUGoPRdlDP3ydaW327_YKD8xFqvIOh3QMwfeN1wsQc1aT68LL/exec?data=$titles$naiyou$position";
+                  "https://script.google.com/macros/s/AKfycbwbMDxv3poqnQAbFZMUL5nJvtKQjz87XSB-8LzDrOZD8VkrXmubfl-bTJmAm7vzlsuw/exec?data=$titles$position";
               final gasUrl = Uri.parse(urlpri);
               launchUrl(gasUrl);
               // bodyの作成
