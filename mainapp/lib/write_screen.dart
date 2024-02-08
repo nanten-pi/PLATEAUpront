@@ -132,16 +132,15 @@ class writeingPage extends StatelessWidget {
             onPressed: () async {
               print(titles); //debug print
               // 位置情報を取得する
-              final position = await _determinePosition();
-              print(position); //debug print
+              //final position = await _determinePosition();
+              //print(position); //debug print
               // headersの作成
               final headers = {
                 'Content-type': 'application/json; charset=UTF-8'
               };
               //ここからセンダーを作ります
-              var urlpri =
-                  "https://script.google.com/macros/s/AKfycbwbMDxv3poqnQAbFZMUL5nJvtKQjz87XSB-8LzDrOZD8VkrXmubfl-bTJmAm7vzlsuw/exec?data=$titles$position";
-              final gasUrl = Uri.parse(urlpri);
+              final gasUrl = Uri.parse(
+                  "https://script.google.com/macros/s/AKfycbwbMDxv3poqnQAbFZMUL5nJvtKQjz87XSB-8LzDrOZD8VkrXmubfl-bTJmAm7vzlsuw/exec?data=$titles");
               launchUrl(gasUrl);
               // bodyの作成
               final body = {
